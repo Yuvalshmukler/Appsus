@@ -1,6 +1,7 @@
 import { emailService } from '../services/email.service.js'
 import emailList from '../cmps/email-list.cmp.js'
 import emailSide from '../cmps/email-side-nav.cmp.js'
+
 export default {
     name: '',
     props: [''],
@@ -8,6 +9,7 @@ export default {
     <section class="email-app-container">
 
     <aside class="nav-menu">
+        <email-list></email-list>
     </aside>
         <email-list :emails="emailsToShow"></email-list>
         
