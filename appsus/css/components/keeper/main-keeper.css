@@ -1,0 +1,36 @@
+
+.note-txt{
+    background-color: lightcyan;
+    width: fit-content;
+    padding: 50px;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+
+.note-img{
+    background-color:lightgoldenrodyellow;
+    width: fit-content;
+    padding: 50px;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.note-todos{
+    background-color: lightsteelblue;
+    width: fit-content;
+    padding: 50px;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+
+.note-todos ul{
+    list-style-type: circle;
+}
+
+.note-todos li{
+    display: block;
+    margin: 20px;
+}
+
