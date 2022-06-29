@@ -3,6 +3,8 @@ import homePage from './views/home-page.cmp.js';
 import aboutPage from './views/about-page.cmp.js';
 import bookDetails from './books/views/book-details.cmp.js';
 import bookAdd from './books/cmps/book-add.cmp.js';
+import emailApp from '../js/apps/email/views/email-app.cmp.js'
+import keeperApp from '../js/apps/keeper/views/keeper-app.cmp.js'
 // import carEdit from './views/car-edit.cmp.js'
 
 
@@ -51,6 +53,14 @@ const routes = [
     {
         path: '/book',
         component: bookApp
+    },
+    {
+        path: '/email',
+        component: emailApp
+    },
+    {
+        path: '/keeper',
+        component: keeperApp
     },
     {
         path: '/book/:bookId',
