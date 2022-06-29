@@ -5,10 +5,12 @@ export const utilService = {
 }
 
 function saveToStorage(key, value) {
+    console.log('saving to storage', key)
     localStorage.setItem(key, JSON.stringify(value) || null);
 }
 
 function loadFromStorage(key) {
+    console.log('loading from storage', key)
     let data = localStorage.getItem(key);
     return (data) ? JSON.parse(data) : undefined;
 }

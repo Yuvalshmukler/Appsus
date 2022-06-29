@@ -1,0 +1,137 @@
+
+
+
+.book-filter{
+    background-color: whitesmoke;
+    text-align: center;
+    width: 700px;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 30px auto;
+    font-size: 20px;
+    
+}
+
+.book-filter  {
+    padding: 20px;
+    margin-bottom: 20px;
+
+    
+}
+
+.book-filter p{
+    display: inline;
+    padding: 20px;
+    
+}
+
+.book-list ul{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    list-style: none;
+
+}
+
+
+.book-preview-container{
+   background-color: cadetblue;
+   color: whitesmoke;
+   text-align: center;
+   font-size: 1.7em;
+   text-transform: capitalize;
+   border-radius: 20px;
+   position: relative;
+   height: 300px;
+   padding: 10px;
+  
+}
+
+
+.book-details{
+    display: flex;
+    background-color: whitesmoke;
+    text-align:left;
+    width: 80%;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 30px auto;
+    font-size: 20px;
+    position: relative;
+
+}
+
+.book-details-img{
+    height: 500px;
+    margin: 30px 60px;
+    border-radius: 20px;
+}
+
+
+.price{
+    position: absolute;
+    bottom: 2px;
+    right: 5px;
+    font-size: 0.8em;
+    font-style: italic;
+    color: lightgoldenrodyellow;
+}
+
+.high{
+    color: red;
+    font-weight: bold;
+}
+
+.low{
+    color: green;
+    font-weight: bold;
+}
+
+
+li{
+    list-style: none;
+    display: inline;
+}
+
+.highlight{
+    font-weight: bold;
+    font-style: oblique;
+    color: darkgoldenrod;
+}
+
+
+button{
+    padding: 10px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: darkslategray;
+    border-radius: 5px;
+}
+
+.sale-img{
+
+    width: 100px;
+
+
+}
+
+
+
+.review-add{
+    border: 2px solid darkslategray;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 10px;
+}
+
+.review-add input{
+    border: 2px solid darkslategray;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 10px;
+}
+
+
+.review-item{
+    display: block;
+    font-size: 16px;
+}
