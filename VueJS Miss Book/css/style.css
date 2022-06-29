@@ -1,0 +1,231 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: lightgray;
+    opacity: 0.9;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: darkslategray;
+}
+
+
+/* header */
+
+.app-header{
+    color: darkgoldenrod;
+    text-align: center;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 20px auto;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    padding: 20px 80px;
+    
+}
+
+.nav-bar>*{
+    color: darkslategray;
+}
+
+.main-app{
+    height: 80vh;
+    width: 80%;
+    margin: 0 auto;
+    background-color: whitesmoke;
+    text-align: center;
+    border-radius: 20px;
+    padding: 10px;
+
+}
+
+
+
+.book-filter{
+    background-color: whitesmoke;
+    text-align: center;
+    width: 700px;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 30px auto;
+    font-size: 20px;
+    
+}
+
+.book-filter  {
+    padding: 20px;
+    margin-bottom: 20px;
+
+    
+}
+
+.book-filter p{
+    display: inline;
+    padding: 20px;
+    
+}
+
+.book-list ul{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    list-style: none;
+
+}
+
+
+.book-preview-container{
+   background-color: cadetblue;
+   color: whitesmoke;
+   text-align: center;
+   font-size: 1.7em;
+   text-transform: capitalize;
+   border-radius: 20px;
+   position: relative;
+   height: 300px;
+   padding: 10px;
+  
+}
+
+
+.book-details{
+    display: flex;
+    background-color: whitesmoke;
+    text-align:left;
+    width: 80%;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 30px auto;
+    font-size: 20px;
+    position: relative;
+
+}
+
+.book-details-img{
+    height: 500px;
+    margin: 30px 60px;
+    border-radius: 20px;
+}
+
+
+.price{
+    position: absolute;
+    bottom: 2px;
+    right: 5px;
+    font-size: 0.8em;
+    font-style: italic;
+    color: lightgoldenrodyellow;
+}
+
+.high{
+    color: red;
+    font-weight: bold;
+}
+
+.low{
+    color: green;
+    font-weight: bold;
+}
+
+
+li{
+    list-style: none;
+    display: inline;
+}
+
+.highlight{
+    font-weight: bold;
+    font-style: oblique;
+    color: darkgoldenrod;
+}
+
+
+button{
+    padding: 10px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: darkslategray;
+    border-radius: 5px;
+}
+
+.sale-img{
+
+    width: 100px;
+
+
+}
+
+
+.app-footer{
+    color: whitesmoke;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.close{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    text-decoration: none;
+    border: 2px solid darkslategray;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+
+.review-add{
+    border: 2px solid darkslategray;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 10px;
+}
+
+.review-add input{
+    border: 2px solid darkslategray;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 10px;
+}
+
+
+.review-item{
+    display: block;
+    font-size: 16px;
+}
+
+
+
+.user-msg{
+    /* height: 50px; */
+    position: fixed;
+    top: 200px;
+    right: 55px;
+    width: 30%;
+    background-color: whitesmoke;
+    text-align: center;
+    border-radius: 20px;
+    padding: 10px;
+    z-index: 30;
+
+}
+
+
+
+.success {
+    background-color: rgb(145, 233, 145);
+    opacity: 0.95;
+}
+
+.error{
+    background-color: rgb(240, 198, 198);
+    color: white;
+    opacity: 0.9;
+}
+
+.remove{
+    cursor: pointer;
+    text-decoration: solid;
+}
