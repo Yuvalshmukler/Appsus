@@ -1,3 +1,4 @@
+
 export const utilService = {
     saveToStorage,
     loadFromStorage,
@@ -28,6 +29,18 @@ function makeId(length = 5) {
     }
     return txt;
 }
+
+
+function getRandom(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min;
+}
+function _getRandChar() {
+    var LETTERS = 'abcdefghijklmnopqrstuvwxyz';
+    var randIndex = parseInt(Math.random() * LETTERS.length)
+    return LETTERS.charAt(randIndex);
+}
 function createWord(length) {
     var word = '';
     while (word.length < length) {
@@ -46,22 +59,15 @@ function getFormattedNowDate() {
     if (day < 10) day = '0' + day
     return year + '-' + month + '-' + day
 }
-function getRandom(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min)) + min;
-}
-function makeLorem(length) {
-    var randStr = '';
-    while (randStr.length < length) {
-        var word = words[getRandom(1, 28)];
-        randStr += word + ' ';
+
+function makeLorem(wordCount = 100) {
+    const words = ['The sky', 'above', 'the port', 'was', 'tuned', 
+    'to', 'a dead channel', '.', 'All', 'this happened', 'more or less', '.', 
+    'I', 'had', 'the story', 'bit by bit', 'from various people', 'and', 'as generally', 'happens', 'each time', 'it', 'was', 'a different story', '.', 'It', 'was', 'a pleasure', 'to', 'burn']
+    var txt = ''
+    while (wordCount > 0) {
+        wordCount--
+        txt += words[Math.floor(Math.random() * words.length)] + ' '
     }
-    randStr = randStr[0].toUpperCase() + randStr.substr(1)
-    return randStr;
-}
-function _getRandChar() {
-    var LETTERS = 'abcdefghijklmnopqrstuvwxyz';
-    var randIndex = parseInt(Math.random() * LETTERS.length)
-    return LETTERS.charAt(randIndex);
+    return txt
 }

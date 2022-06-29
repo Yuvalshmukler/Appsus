@@ -6,7 +6,7 @@ import bookAdd from './books/cmps/book-add.cmp.js';
 import emailApp from '../js/apps/email/views/email-app.cmp.js'
 import keeperApp from '../js/apps/keeper/views/keeper-app.cmp.js'
 // import carEdit from './views/car-edit.cmp.js'
-
+import emailDetails from  '../js/apps/email/views/email-details.cmp.js'
 
 
 const aboutTeam = {
@@ -70,10 +70,11 @@ const routes = [
         path: '/Add',
         component: bookAdd
     },
-    // {
-    //     path: '/car/edit/:carId?',
-    //     component: carEdit
-    // },
+    {
+        path: '/email/:emailId',
+        component: emailDetails
+    },
+
 ]
 
 export const router = VueRouter.createRouter({

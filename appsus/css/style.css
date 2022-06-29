@@ -36,7 +36,10 @@
  */
 
 
-
+.sender{
+    color: black;
+    font-weight: 600;
+}
 
 *{
     box-sizing: border-box;
@@ -48,8 +51,10 @@ body{
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: darkslategray;
 }
-
-
+.email-preview{
+    background-color: rgb(150, 163, 163);
+    margin-bottom: 25px;
+}
 /* header */
 
 .app-header{
