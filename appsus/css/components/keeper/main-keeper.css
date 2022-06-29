@@ -1,27 +1,51 @@
 
-.note-txt{
-    background-color: lightcyan;
-    width: fit-content;
-    padding: 50px;
-    border-radius: 10px;
+.notes-preview-container{
+    background-color: rgb(237, 248, 248);
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    width: 100%;
+}
+
+
+.note-preview {
+    width: 500px;
     margin: 20px;
+    /* background-color: aqua; */
+    margin: 20px;
+    font-size: 1.5em;
+
+}
+
+
+.note-txt{
+    /* width: fit-content; */
+    background-color: rgb(135, 184, 184);
+    padding: 50px;
+    border-radius: 5px;
+ 
+
 }
 
 
 .note-img{
     background-color:lightgoldenrodyellow;
-    width: fit-content;
     padding: 50px;
-    border-radius: 10px;
-    margin: 20px;
+    border-radius: 5px;
+    
+}
+
+.note-img img{
+    max-width: 400px;
+
 }
 
 .note-todos{
     background-color: lightsteelblue;
-    width: fit-content;
+    /* width: fit-content; */
     padding: 50px;
-    border-radius: 10px;
-    margin: 20px;
+    border-radius: 5px;
+  
 }
 
 
@@ -34,3 +58,18 @@
     margin: 20px;
 }
 
+
+.note-video{
+    background-color: rgb(247, 208, 214);
+    /* width: fit-content; */
+    padding: 50px;
+    border-radius: 5px;
+
+}
+
+.actions{
+    background-color: rgb(176, 185, 185);
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+}
