@@ -6,8 +6,8 @@ export default {
     <section class="email-inbox">
         <ul>
             <li v-for="email in emails" :key="email.id" class="email-preview-container">
-            <router-link :to="'/email/'+email.id">
-                <email-preview :email="email"></email-preview>
+            <router-link :to="'/email/'+email.id" class="email-link">
+                <email-preview :email="email" @remove="removeEmail"></email-preview>
                 </router-link>
 
            
@@ -22,7 +22,7 @@ export default {
 
     data() {
         return {
-
+            
         }
     },
     methods: {
