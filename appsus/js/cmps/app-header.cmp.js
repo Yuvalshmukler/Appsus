@@ -7,7 +7,7 @@ export default {
                 <router-link to="/book"> Books</router-link> |
                <!--  <router-link to="/about"> About</router-link>| -->
                 <router-link to="/email">Email</router-link>|
-                <router-link to="/keeper">Keeper</router-link>
+                <router-link to="/keeper">Keep <img src="img/keeper.png"/></router-link>
             </nav>
     </header>
    `,

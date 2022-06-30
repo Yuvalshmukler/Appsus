@@ -1,4 +1,24 @@
 
+
+.grid-container{
+    display: grid;
+    /* background-color: blanchedalmond; */
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "sidenav notesapp";
+}
+
+.notes-app{
+    margin: 0;
+    grid-area: notesapp;
+    /* background-color:lightseagreen; */
+}
+
+.side-nav{
+    grid-area: sidenav;
+    background-color: lightcoral;
+}
+
 .notes-preview-container{
     background-color: rgb(237, 248, 248);
     display: flex;

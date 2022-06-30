@@ -13,6 +13,16 @@ export default {
             <option>vacation</option>
         </select>
       </label> 
+      <label>
+        Type
+        <select v-model="filterBy.type" @change="filter">  
+            <option>  </option>
+            <option>note-txt</option>
+            <option>note-img</option>
+            <option>note-todos</option>
+            <option>note-video</option>
+        </select>
+      </label> 
    </section>
   `,
     data() {

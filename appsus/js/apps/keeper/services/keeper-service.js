@@ -49,6 +49,7 @@ function get(noteId) {
 }
 
 function save(note) {
+  console.log('saving', note)
   if (note.id) return storageService.put(NOTES_KEY, note)
   else return storageService.post(NOTES_KEY, note)
 
@@ -96,7 +97,7 @@ function getNotes()  {
               id: utilService.makeId(),
               type: "note-todos",
               info: {
-                label: "Stuff I need to do",
+                title: "Stuff I need to do",
                 todos: [
                   { txt: "Pay thw water bill", doneAt: null },
                   { txt: "Take the washing machine fixed", doneAt: 187111111 },
@@ -142,7 +143,7 @@ function getNotes()  {
                   id: utilService.makeId(),
                   type: "note-todos",
                   info: {
-                    label: "Grocery Shooping",
+                    title: "Grocery Shooping",
                     todos: [
                       { txt: "Banans", doneAt: null },
                       { txt: "Milk", doneAt: 187111111 },
