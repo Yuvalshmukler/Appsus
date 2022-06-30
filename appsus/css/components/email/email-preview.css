@@ -1,21 +1,32 @@
 .email-preview-container {
-    color: #202124;
-    background: rgba(255, 255, 255, 0.902);
-    text-align: center;
-    font-size: 0.8rem;
-    padding-bottom: 5px;
-    padding-top: 5px;
-    ;
+    text-align: left;
+    font-size: 0.9rem;
+    padding-bottom: 9px;
+    padding-top: 9px;
     display: grid;
-    column-gap: 2rem;
+    column-gap: 2.5rem;
     grid-template-columns: 1fr 3fr 7fr 1fr;
     grid-template-rows: auto;
-    width: 60rem;
+    width: 68rem;
+}
+
+.email-preview:hover {
+    box-shadow: 1px 11px 39px -8px rgba(0,0,0,0.7);
+    -webkit-box-shadow: 1px 11px 39px -8px rgba(0,0,0,0.7);
+    -moz-box-shadow: 1px 11px 39px -8px rgba(0,0,0,0.7);
+    
+}
+.unRead{
+    background-color: rgba(176, 173, 173, 0.568);
+}
+.read{
+    background-color: aliceblue;
 }
 .email-preview-content {
     display: inline;
 
 }
+
 .email-preivew-sender {
     display: inline;
 
@@ -28,4 +39,8 @@
 .email-preview-time {
     display: inline;
 
+}
+
+.email-container {
+    background-color: #202124;
 }

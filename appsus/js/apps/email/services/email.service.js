@@ -15,7 +15,7 @@ function query(){
     return Promise.resolve(emailsDB)
 }
 function getEmailById(emailId) {
-    console.log('hi');
+
     const email = emailsDB.find(email => email.id === emailId)
     return Promise.resolve(email)
 }
@@ -33,8 +33,6 @@ function _createEmails() {
 }
 
 function _createEmail(sender = utilService.createWord(6)) {
-    var subject = utilService.makeLorem(3)
-    console.log(subject);
     return {
         id: utilService.makeId(),
         sender: sender,
