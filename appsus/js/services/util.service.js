@@ -1,4 +1,3 @@
-
 export const utilService = {
     saveToStorage,
     loadFromStorage,
@@ -8,7 +7,6 @@ export const utilService = {
     getRandom,
     makeLorem,
 }
-let words = []
 
 function saveToStorage(key, value) {
     console.log('saving to storage', key)
@@ -61,9 +59,10 @@ function getFormattedNowDate() {
 }
 
 function makeLorem(wordCount = 100) {
-    const words = ['The sky', 'above', 'the port', 'was', 'tuned', 
-    'to', 'a dead channel', '.', 'All', 'this happened', 'more or less', '.', 
-    'I', 'had', 'the story', 'bit by bit', 'from various people', 'and', 'as generally', 'happens', 'each time', 'it', 'was', 'a different story', '.', 'It', 'was', 'a pleasure', 'to', 'burn']
+    const words = ['New job', 'Tomorrow', 'My team', 'Found', 'Job', 
+    'Sell', 'New idea', 'All', 'Right', 'Fly', 'Vcation', '.', 
+    'I', 'had', 'Time', 'Option', ' Various', 'And', 'Generally', 'Happens', 'The time',
+     'it', 'was', 'Different story', 'Login', 'We want', 'Yesterday', 'A pleasure', 'to', 'Yes']
     var txt = ''
     while (wordCount > 0) {
         wordCount--

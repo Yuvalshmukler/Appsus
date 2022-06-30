@@ -1,17 +1,23 @@
 import { emailService } from '../services/email.service.js'
 import emailList from '../cmps/email-list.cmp.js'
 import emailSide from '../cmps/email-side-nav.cmp.js'
+import { eventBus } from '../../../services/eventBus-service.js'
+
 export default {
     name: '',
     props: [''],
     template: `
+   
     <section class="email-app-container">
 
-    <aside class="nav-menu">
+    <aside class="side-menu">
+        <email-side :emails="emails"></email-side>
     </aside>
         <email-list :emails="emailsToShow"></email-list>
         
     </section>
+
+   
     `,
     components: {
         emailList,
@@ -20,10 +26,11 @@ export default {
     created() {
         emailService.query()
             .then(emails => {
-               /*  console.log(emails); */
+                /*  console.log(emails); */
                 this.emails = emails
-              
-            })
+
+            }),
+            eventBus.on('removed',this.removeEmail)
     },
     data() {
         return {
@@ -31,6 +38,23 @@ export default {
         }
     },
     methods: {
+        removeEmail(id) {
+            console.log('hi');
+            emailService.remove(id)
+                .then(() => {
+                    console.log('Deleted successfully')
+                    const idx = this.emails.findIndex((email) => email.id === id)
+                    console.log(idx);
+                    this.emails.splice(idx, 1)
+                   /*  showSuccessMsg('Deleted successfully') */
+                })
+                .catch(err => {
+                    console.log(err)
+                    /* showErrorMsg('Failed to remove') */
+                })
+        },
+
+
     },
     computed: {
         emailsToShow() {

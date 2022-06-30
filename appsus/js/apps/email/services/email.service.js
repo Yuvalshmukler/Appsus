@@ -1,9 +1,11 @@
 import { utilService } from '../../../services/util.service.js'
+import { storageService } from '../../../services/async-storage-service.js';
 
 
 export const emailService = {
     query,
     getEmailById,
+    remove,
 }
 const EMAIL_KEY ='emails'
 const emailsDB = utilService.loadFromStorage(EMAIL_KEY) || _createEmails()
@@ -40,6 +42,7 @@ function _createEmail(sender = utilService.createWord(6)) {
         body: utilService.makeLorem(utilService.getRandom(100, 210)),
         sentAt:  new Date(),
         isRead: false,
+        emailAdress: `${sender}gh@gmail.com`,
         boxes: {
             inbox: true,
             sentBox: false,
@@ -47,4 +50,9 @@ function _createEmail(sender = utilService.createWord(6)) {
             note: false
         }
     }
+}
+
+function remove(bookId) {
+    // return Promise.reject('Big Error Badd')
+    return storageService.remove(EMAIL_KEY, bookId)
 }

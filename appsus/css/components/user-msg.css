@@ -1,0 +1,29 @@
+.user-msg{
+    /* height: 50px; */
+    position: fixed;
+    top: 200px;
+    right: 55px;
+    width: 30%;
+    background-color: whitesmoke;
+    text-align: center;
+    border-radius: 20px;
+    padding: 10px;
+    z-index: 30;
+
+}
+
+.success {
+    background-color: rgb(145, 233, 145);
+    opacity: 0.95;
+}
+
+.error {
+    background-color: rgb(240, 198, 198);
+    color: white;
+    opacity: 0.9;
+}
+
+.remove {
+    cursor: pointer;
+    text-decoration: solid;
+}

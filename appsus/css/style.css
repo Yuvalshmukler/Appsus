@@ -1,142 +1,46 @@
 
-
-/* SETUP  */
-
-/* @import 'setup/vars.css';
+/* SETUP */
 @import 'setup/typography.css';
- */
-/* BASE */
+@import 'setup/vars.css';
 
-/* @import 'basic/base.css';
-@import 'basic/layout.css';
-@import 'basic/helpers.css';
- */
 /* COMPONENTS */
-
-/* @import 'components/main-header.css';
-@import 'components/footer.css';
 @import 'components/screen.css';
 @import 'components/drop-down.css';
- */
-/* BOOK */
 
-@import 'components/book/main-book.css'; 
+/* BASE */
+@import 'basic/base.css';
+@import 'basic/header.css';
+@import 'basic/footer.css';
+@import 'basic/layout.css';
+/* @import 'basic/helpers.css'; */
+
+
+/* BASIC COMPONENTS */
+@import 'components/user-msg.css';
+@import 'components/book/main-book.css';
+@import 'components/main-header.css';
+
+/* KEEPER */
+@import 'components/keeper/main-keeper.css';
 
 /* EMAIL */
+@import 'components/email/email-preview.css';
+@import 'components/email/email-details.css';
+@import 'components/email/email-list.css';
+@import 'components/email/email-app.css';
+@import 'components/email/side-nav.css';
 
-/* @import 'components/email/main-email.css';
- */
-/* KEEPER */
+/* MEDIA QUERIES */
+/* @import 'mq/mq.css'*/
 
-@import 'components/keeper/main-keeper.css'; 
-
-
-/* Media Queries */
-/* @import 'mq/mq.css';
- */
-
-
-.sender{
-    color: black;
-    font-weight: 600;
-}
-
-*{
-    box-sizing: border-box;
-}
-
-body{
-    background-color: lightgray;
-    opacity: 0.9;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: darkslategray;
-}
-.email-preview{
-    background-color: rgb(150, 163, 163);
-    margin-bottom: 25px;
-}
-/* header */
-
-.app-header{
-    color: darkgoldenrod;
-    text-align: center;
-    font-size: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 80%;
-    margin: 20px auto;
-    background-color: whitesmoke;
-    border-radius: 20px;
-    padding: 20px 80px;
-    
-}
-
-.nav-bar>*{
-    color: darkslategray;
-}
-
-.main-app{
-    height: 80vh;
-    width: 80%;
-    margin: 0 auto;
-    background-color: whitesmoke;
-    text-align: center;
-    border-radius: 20px;
-    padding: 10px;
-
-}
-
-
-
-.app-footer{
-    color: whitesmoke;
-    text-align: center;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.close{
+.close {
     position: absolute;
     top: 20px;
     right: 20px;
     text-decoration: none;
-    border: 2px solid darkslategray;
+    border: 2px solid pink;
     border-radius: 5px;
     padding: 5px;
 }
 
 
-
-
-.user-msg{
-    /* height: 50px; */
-    position: fixed;
-    top: 200px;
-    right: 55px;
-    width: 30%;
-    background-color: whitesmoke;
-    text-align: center;
-    border-radius: 20px;
-    padding: 10px;
-    z-index: 30;
-
-}
-
-
-
-.success {
-    background-color: rgb(145, 233, 145);
-    opacity: 0.95;
-}
-
-.error{
-    background-color: rgb(240, 198, 198);
-    color: white;
-    opacity: 0.9;
-}
-
-.remove{
-    cursor: pointer;
-    text-decoration: solid;
-}
