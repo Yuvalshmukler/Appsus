@@ -30,11 +30,12 @@
 @import 'components/email/email-list.css';
 @import 'components/email/email-app.css';
 @import 'components/email/side-nav.css';
+@import 'components/email/email-compose.css';
 
 /* MEDIA QUERIES */
 /* @import 'mq/mq.css'*/
 
-.close {
+/* .close {
     position: absolute;
     top: 20px;
     right: 20px;
@@ -43,5 +44,5 @@
     border-radius: 5px;
     padding: 5px;
 }
-
+ */
 

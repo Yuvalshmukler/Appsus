@@ -1,16 +1,25 @@
 .side-bar-email{
+    display: flex;
+    margin-left: 0;
     cursor: pointer;
     padding-top: 5px;
+    padding-left: 2rem;
     height: 10rem;
     display: flex;
+    color: rgb(75, 74, 74);
     flex-direction:column;
 }
 
-
-
+/* .side-bar-email li:hover{
+background-color: gray;
+}
+ */
+.side-bar-email ul{
+    margin-left: 0px;
+}
 .side-bar-email li{
-    margin-bottom: 15px;
+    padding-bottom: 15px;
 }
 .side-bar-email i{
-   margin-right: 15px;
+   padding-right: 15px;
 }

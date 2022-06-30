@@ -1,7 +1,7 @@
 import { emailService } from '../services/email.service.js'
 import { deleteEmail } from '../../../services/eventBus-service.js'
-import emailSide from '../cmps/email-side-nav.cmp.js'
 import { eventBus } from '../../../services/eventBus-service.js'
+import emailSide from '../cmps/email-side-nav.cmp.js'
 
 export default {
     name: '',

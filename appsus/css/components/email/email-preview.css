@@ -1,8 +1,7 @@
 .email-preview-container {
     text-align: left;
     font-size: 0.9rem;
-    padding-bottom: 9px;
-    padding-top: 9px;
+    padding: 9px 2px;
     display: grid;
     column-gap: 2.5rem;
     grid-template-columns: 1fr 3fr 7fr 1fr;
@@ -16,8 +15,12 @@
     -moz-box-shadow: 1px 11px 39px -8px rgba(0,0,0,0.7);
     
 }
-.unRead{
-    background-color: rgba(176, 173, 173, 0.568);
+.email-preview{
+border-bottom: 1px solid rgba(147, 146, 146, 0.345);
+
+}
+.unread{
+    background-color: rgba(224, 223, 223, 0.377);
 }
 .read{
     background-color: aliceblue;

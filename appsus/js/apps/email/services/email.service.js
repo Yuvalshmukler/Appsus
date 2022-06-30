@@ -6,6 +6,7 @@ export const emailService = {
     query,
     getEmailById,
     remove,
+    createNewEmail,
 }
 const EMAIL_KEY ='emails'
 const emailsDB = utilService.loadFromStorage(EMAIL_KEY) || _createEmails()
@@ -18,6 +19,43 @@ function getEmailById(emailId) {
 
     const email = emailsDB.find(email => email.id === emailId)
     return Promise.resolve(email)
+}
+function createNewEmail(emailDetails) {
+
+/*     console.log('emailDetails',emailDetails.sender);
+    console.log('emailDetails',emailDetails.body);
+ */    
+    const email = {
+        id: utilService.makeId(),
+        sender: emailDetails.sender,
+        subject: emailDetails.subject,
+        body: emailDetails.body,
+        isRead: false,
+        sentAt: Date.now(),
+        boxes: emailDetails.boxes
+    }
+    /* console.log('email',email); */
+    return storageService.post(EMAIL_KEY,email)
+    
+}
+
+
+function _createEmail(sender = utilService.createWord(6)) {
+    return {
+        id: utilService.makeId(),
+        sender: sender,
+        subject: utilService.makeLorem(utilService.getRandom(2,3)),
+        body: utilService.makeLorem(utilService.getRandom(100, 210)),
+        sentAt:  new Date(),
+        isRead: false,
+        emailAdress: `${sender}${utilService.getRandom(4, 7)}@gmail.com`,
+        boxes: {
+            inbox: true,
+            sentBox: false,
+            draft: false,
+            star: false,
+        }
+    }
 }
 
 function _createEmails() {
@@ -32,25 +70,9 @@ function _createEmails() {
     return emails
 }
 
-function _createEmail(sender = utilService.createWord(6)) {
-    return {
-        id: utilService.makeId(),
-        sender: sender,
-        subject: utilService.makeLorem(utilService.getRandom(2,3)),
-        body: utilService.makeLorem(utilService.getRandom(100, 210)),
-        sentAt:  new Date(),
-        isRead: false,
-        emailAdress: `${sender}gh@gmail.com`,
-        boxes: {
-            inbox: true,
-            sentBox: false,
-            draft: false,
-            note: false
-        }
-    }
+/* LATER */
+function remove(emailId) {
+    // return Promise.reject('Big Error Badd')
+    return storageService.remove(EMAIL_KEY, emailId)
 }
 
-function remove(bookId) {
-    // return Promise.reject('Big Error Badd')
-    return storageService.remove(EMAIL_KEY, bookId)
-}

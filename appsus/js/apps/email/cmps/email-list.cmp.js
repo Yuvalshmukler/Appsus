@@ -4,10 +4,11 @@ export default {
     props: ['emails'],
     template: `
     <section v-if="emails" class="email-inbox">
-            <div v-for="email in emails" class="email-preview">
+            <div v-for="email in emails" class="email-preview unread" >
             <router-link :to="'/email/'+email.id" class="email-link">
                 <email-preview :email="email"></email-preview>
                 </router-link>
+               
             </div>
     </section>
     `,
