@@ -1,0 +1,14 @@
+.app-header {
+    color: darkgoldenrod;
+    text-align: center;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 20px auto;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    padding: 20px 80px;
+
+}

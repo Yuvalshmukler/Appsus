@@ -1,0 +1,29 @@
+
+
+.notes-app h1{
+    margin-left: 3em;
+
+}
+
+
+
+.notes-preview-container{
+    /* background-color: rgb(237, 248, 248); */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    /* flex-wrap: wrap; */
+    list-style: none;
+    width: 100%;
+}
+
+.actions{
+    background-color: rgba(211, 211, 211, 0.562);
+    display: flex;
+    justify-content: space-around;
+}
+.actions p{
+    display: inline;
+    font-size: 1em;
+    cursor: pointer;
+}

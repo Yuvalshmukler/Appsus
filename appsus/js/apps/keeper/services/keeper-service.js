@@ -109,7 +109,6 @@ function getNotes()  {
               {
                 id: utilService.makeId(),
                 type: "note-video",
-                isPinned: true,
                 info: {
                   url: "https://www.youtube.com/embed/tgbNymZ7vqY",
                   title: "This is a funny one",
@@ -119,7 +118,6 @@ function getNotes()  {
                 {
                   id: utilService.makeId(),
                   type: "note-txt",
-                  isPinned: true,
                   info: {
                     txt: "Once we accept our limits, we go beyond them. | Albert Einstein",
                     label: 'important',

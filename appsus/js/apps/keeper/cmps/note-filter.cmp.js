@@ -1,10 +1,9 @@
 export default {
     template: `
    <section class="note-filter">
-
-      <label for="title">Search notes:</label>
-        <input type="text" id="title" v-model="filterBy.txt" @input="filter">
-      <label>
+        <input type="text" id="title" v-model="filterBy.txt" @input="filter" placeholder="Search...">
+        <p><i class="fa-solid fa-magnifying-glass"></i></p>
+      <!-- <label>
         Label
         <select v-model="filterBy.label" @change="filter">  
             <option>  </option>
@@ -22,7 +21,8 @@ export default {
             <option>note-todos</option>
             <option>note-video</option>
         </select>
-      </label> 
+      </label>  -->
+
    </section>
   `,
     data() {

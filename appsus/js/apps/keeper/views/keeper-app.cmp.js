@@ -4,6 +4,7 @@ import { keeperService }  from "../services/keeper-service.js"
 import noteAdd from "../cmps/note-add.cmp.js";
 import noteList from "../cmps/note-list.cmp.js";
 import noteFilter from "../cmps/note-filter.cmp.js";
+import noteNav from "../cmps/note-nav.cmp.js";
 
 
 
@@ -12,14 +13,15 @@ export default {
     template: `
         <section class="grid-container">
             <div class="side-nav">
-                <h1>im a side nav</h1>
+                <note-nav />
             </div>
 
-            <div class="notes-app">    
+            <div class="notes-app">   
+                <!-- <pre>{{notes}}</pre> -->
                 <note-filter @filtered="setFilter"></note-filter>
+                <hr>
                 <note-add @addNote="addNote"/>
-                    <h1>Pinned</h1>
-                    <hr>
+                    <h1 class="pin-note-heading"><i class="fa-solid fa-thumbtack"></i> Pinned</h1>
                     <note-list :notes="pinnedNotes" 
                             @editNote="editNote"
                             @duplicateNote = "duplicateNote"
@@ -48,6 +50,7 @@ export default {
         noteList,   
         noteFilter,
         noteAdd,
+        noteNav,
     },
     methods: {
         editNote(editPram, note) {
@@ -66,12 +69,11 @@ export default {
           },
         addNote(note){
             console.log('adding note app', note),
-            keeperService.save(note)
-            this.notes.unshift(note)
+            keeperService.save(note).then(note => this.notes.unshift(note) )
+            
         }
     },
     computed: {
-
         pinnedNotes(){
             var notes = this.notes
             notes = notes.filter(note => (!note.isTrash && note.isPinned))

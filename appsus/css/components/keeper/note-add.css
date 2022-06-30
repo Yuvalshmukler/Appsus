@@ -2,8 +2,8 @@
 .note-add{
     display: flex;
     /* background-color: aqua; */
-    width: 80%;
-    margin: 2em;
+    width: 95%;
+    margin: 3.5em;
     box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.51);
     border-radius: 0.5em;
     justify-content: space-between;
@@ -31,9 +31,10 @@
 
 .note-add-icon{
     display: inline;
-    margin: 1em;
-    padding: 1em;
+    margin: 0.3em;
+    padding: 0.3em;
     font-size: 2em;
+    cursor: pointer;
 }
 
 .active{
@@ -44,6 +45,15 @@
 
 .note-add button{
     border:none;
-    font-size: 2em;
-    border-radius: 1em;
+    font-size: 1.5em;
+    width: 2em;
+    border-radius: 50%;
+    margin-left: 1em;
+    background-color: none;
+    cursor: pointer;
+}
+
+
+.todo-list-item {
+    margin-left: 5em;
 }
