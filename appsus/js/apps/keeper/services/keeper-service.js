@@ -75,7 +75,8 @@ function getNotes()  {
               isPinned: true,
               info: {
                 txt: "Learn from yesterday, live for today, hope for tomorrow. The important thing is not to stop questioning. | Albert Einstein",
-                }
+                label: 'empowering',
+                },
               },
 
               {
@@ -83,11 +84,12 @@ function getNotes()  {
               type: "note-img",
               info: {
                 url: "https://globalholidaylocations.com/wp-content/uploads/2022/04/Vacation.jpg",
-                title: "Just 2 more month..."
+                title: "Just 2 more month...",
+                label: 'vacation',
                 },
               style: {
               backgroundColor: "#00d"
-                }
+                },
               },
 
               {
@@ -99,8 +101,9 @@ function getNotes()  {
                   { txt: "Pay thw water bill", doneAt: null },
                   { txt: "Take the washing machine fixed", doneAt: 187111111 },
                   { txt: "Call Mom", doneAt: 187111111 },
-                  ]
-                }
+                  ],
+                  label: 'important',
+                },
               },
               {
                 id: utilService.makeId(),
@@ -108,7 +111,8 @@ function getNotes()  {
                 isPinned: true,
                 info: {
                   url: "https://www.youtube.com/embed/tgbNymZ7vqY",
-                  title: "This is a funny one"
+                  title: "This is a funny one",
+                  label: 'important',
                   },
                 },
                 {
@@ -116,7 +120,8 @@ function getNotes()  {
                   type: "note-txt",
                   isPinned: true,
                   info: {
-                    txt: "Once we accept our limits, we go beyond them. | Albert Einstein"
+                    txt: "Once we accept our limits, we go beyond them. | Albert Einstein",
+                    label: 'important',
                     }
                   },
     
@@ -125,7 +130,8 @@ function getNotes()  {
                   type: "note-img",
                   info: {
                     url: "https://stopandgo-hue.com/wp-content/uploads/2016/11/phoco.jpg",
-                    title: "Coming soon..."
+                    title: "Coming soon...",
+                    label: 'vacation',
                     },
                   style: {
                   backgroundColor: "#00d"
@@ -142,7 +148,8 @@ function getNotes()  {
                       { txt: "Milk", doneAt: 187111111 },
                       { txt: "Bread", doneAt: 187111111 },
                       { txt: "Cheese", doneAt: 187111111 },
-                      ]
+                    ],
+                    label: 'important',
                     }
                   },
                 
@@ -152,7 +159,8 @@ function getNotes()  {
                       type: "note-img",
                       info: {
                         url: "https://static3.bigstockphoto.com/2/1/3/large1500/312082948.jpg",
-                        title: "Take a deep breath"
+                        title: "Take a deep breath",
+                        label: 'empowering',
                         },
                       style: {
                       backgroundColor: "#00d"

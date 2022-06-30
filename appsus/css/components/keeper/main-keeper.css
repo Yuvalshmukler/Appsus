@@ -7,6 +7,13 @@
     width: 100%;
 }
 
+.label{
+    background-color: darkseagreen;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 1em;
+    width: fit-content;
+}
 
 .note-preview {
     width: 500px;
@@ -20,8 +27,8 @@
 
 .note-txt{
     /* width: fit-content; */
-    background-color: rgb(135, 184, 184);
-    padding: 50px;
+    background-color: rgb(199, 241, 241);
+    padding: 10px;
     border-radius: 5px;
  
 
@@ -43,7 +50,7 @@
 .note-todos{
     background-color: lightsteelblue;
     /* width: fit-content; */
-    padding: 50px;
+    padding: 20px;
     border-radius: 5px;
   
 }
