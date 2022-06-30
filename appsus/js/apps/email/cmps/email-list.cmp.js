@@ -3,17 +3,12 @@ import emailPreview from "../cmps/email-preview.cmp.js"
 export default {
     props: ['emails'],
     template: `
-    <section class="email-inbox">
-        <ul>
-            <li v-for="email in emails" :key="email.id" class="email-preview-container">
+    <section v-if="emails" class="email-inbox">
+            <div v-for="email in emails" class="email-preview">
             <router-link :to="'/email/'+email.id" class="email-link">
-                <email-preview :email="email" @remove="removeEmail"></email-preview>
+                <email-preview :email="email"></email-preview>
                 </router-link>
-
-           
-            <!-- <pre>{{emails}}</pre> -->
-            </li>
-        </ul>
+            </div>
     </section>
     `,
     components: {

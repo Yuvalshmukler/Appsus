@@ -24,5 +24,7 @@ function emit(eventName, data) {
 export const eventBus = { on, emit };
 
 export function deleteEmail(emailId){
+    console.log(emailId);
     emit('removed',emailId)
+    console.log('please',emailId);
 }

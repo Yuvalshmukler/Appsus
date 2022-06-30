@@ -19,21 +19,21 @@ export const keeperService = {
 }
 
 function query() {
-  console.log('query')
+  /* console.log('query') */
   return storageService.query(NOTES_KEY)
        
 }
 
 
 function edit(editPram, note){
-  console.log('edit service', editPram, note)
+  /* console.log('edit service', editPram, note) */
   note[editPram] = true
   save(note)
 
 }
 
 function duplicate(note){
-  console.log('duplicate service', note)
+  /* console.log('duplicate service', note) */
   note.id = utilService.makeId()
   storageService.post(NOTES_KEY, note)
 
@@ -56,12 +56,12 @@ function save(note) {
 }
 
 function _createNotes(){
-    console.log('creating notes')
+    /* console.log('creating notes') */
     let notes = utilService.loadFromStorage(NOTES_KEY);
     if (!notes || !notes.length) {
       notes = getNotes() 
       utilService.saveToStorage(NOTES_KEY, notes) }
-    console.log(notes)
+    /* console.log(notes) */
     return notes
 }
 

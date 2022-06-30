@@ -4,6 +4,7 @@ export default {
     template: `
     <section>
         <ul class="side-bar-email">
+            <li><button>Compose</button></li>
             <li v-bind="countEmails"><i class="fa-solid fa-inbox"></i>inbox</li>
             <li><i class="fa-solid fa-star"></i>starred</li>
             <li><i class="fa-solid fa-paper-plane"></i>sent Emails</li>
@@ -12,9 +13,12 @@ export default {
     </section>
     `,
     created() {
-        console.log(this.emails);
+        /* console.log(this.emails); */
     },
     data() {
+        return{
+
+        }
     },
     methods: {
         countEmails(){
