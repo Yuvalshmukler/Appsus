@@ -3,10 +3,10 @@ export default {
     template: `
         <section class="note-todos">
             <h5 class="label">{{info.label}}</h5>
-            <h2>{{info.title}}</h2>
+            <h3>{{info.title}}</h3>
             <ul>
                 <li v-for="todo in info.todos" >
-                    * {{todo.txt}}
+                ◻️ {{todo.txt}}
                 </li>
             </ul>
             

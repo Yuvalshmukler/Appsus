@@ -8,15 +8,17 @@ export default {
 
     template: `
         <section class="notes-app">
+            <!-- <pre>{{notes}}</pre> -->
          <ul class="notes-preview-container">
             <li v-for="(note,idx) in notes" :key="note.id" class="note-preview"  >
+                <p class="pin" v-if="note.isPinned"><i class="fa-solid fa-thumbtack"></i></p>
                 <note-preview :note="note"/> 
                 <div class="actions">
-                       <button @click="edit('isTrash', note)">Trash</button>
-                       <button @click="duplicate(note)">Duplicate</button>
-                       <button @click="edit('isPinned', note)">Pin</button>
-                       <button>Update</button>
-                       <button>Change bg</button>
+                       <p @click="edit('isTrash', note)"><i class="fa-solid fa-trash-can"></i></p>
+                       <p @click="duplicate(note)"><i class="fa-solid fa-copy"></i></p>
+                       <p @click="edit('isPinned', note)"><i class="fa-solid fa-thumbtack"></i></p>
+                       <p><i class="fa-solid fa-pen-to-square"></i></p>
+                       <p><i class="fa-solid fa-palette"></i></p>
                 </div>  
             </li>
         </ul>

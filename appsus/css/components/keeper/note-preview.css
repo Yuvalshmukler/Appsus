@@ -1,0 +1,94 @@
+
+.note-preview {
+    /* width: 500px; */
+    margin: 20px;
+    /* background-color: aqua; */
+    padding: 3px;
+    font-size: 1.5em;
+    line-height: 1.5em;
+    border: 1px solid gainsboro;
+    border-radius: 5px;
+    height: fit-content;
+    box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.21);
+    position: relative;
+
+}
+
+
+.note-txt{
+    /* width: fit-content; */
+    background-color: rgba(21, 88, 88, 0.178);
+    padding: 1em;
+    padding-top: 2em;
+ 
+
+}
+
+
+.note-img{
+    background-color:rgba(238, 238, 9, 0.055);
+    padding: 1em;
+
+    
+}
+
+.note-img img{
+    max-width: 400px;
+
+}
+
+.note-todos{
+    height: 100%;
+    background-color: rgba(40, 88, 38, 0.103);
+    /* width: fit-content; */
+    padding: 1em;
+    padding-top: 1.2em;
+    /* font-size: 1em; */
+ 
+  
+}
+
+
+.note-todos ul{
+    font-size: 0.8em;
+}
+
+.note-todos li{
+    display: block;
+    /* padding: 0.3em; */
+}
+
+
+.note-video{
+    background-color: rgba(99, 10, 10, 0.219);
+    /* width: fit-content; */
+    padding: 1em;
+ 
+
+}
+
+
+.todo-list-item{
+    display: block;
+}
+
+
+.label{
+    position: absolute;
+    right: 0.5em;
+    top: 0;
+    padding: 0.3em;
+    background-color: rgba(255, 217, 0, 0.418);
+    border-radius: 5px;
+    /* font-size: 1em; */
+    width: fit-content;
+}
+
+
+.pin{
+    position: absolute;
+    left: 0.5em;
+    top: 0;
+    padding: 0.3em;
+   
+}

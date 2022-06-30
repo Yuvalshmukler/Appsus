@@ -1,0 +1,40 @@
+.note-filter{
+    /* background-color: aqua; */
+    padding: 2em;
+    display: flex;
+    border: none;
+    align-items: center;
+}
+
+
+.note-filter input{
+    box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.51);
+    width:50%;
+    border-radius: 0.5em;
+    padding: 1em;
+    margin: 1em;
+    border: none;
+    font-size: 1.5em;
+}
+
+.note-filter p{
+    font-size: 2.5em;
+    
+}
+
+.note-filter label{
+    font-size: 2em;
+    padding: 1em;
+    margin: 1em;
+    
+}
+
+
+.note-filter select{
+    box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.51);
+    border-radius: 0.5em;
+    padding: 1em;
+    margin: 1em;
+    border: none;
+
+}

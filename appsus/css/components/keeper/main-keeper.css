@@ -1,4 +1,6 @@
-
+body{
+    margin: 0;
+}
 
 .grid-container{
     display: grid;
@@ -12,91 +14,4 @@
     margin: 0;
     grid-area: notesapp;
     /* background-color:lightseagreen; */
-}
-
-.side-nav{
-    grid-area: sidenav;
-    background-color: lightcoral;
-}
-
-.notes-preview-container{
-    background-color: rgb(237, 248, 248);
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    width: 100%;
-}
-
-.label{
-    background-color: darkseagreen;
-    padding: 5px;
-    border-radius: 5px;
-    font-size: 1em;
-    width: fit-content;
-}
-
-.note-preview {
-    width: 500px;
-    margin: 20px;
-    /* background-color: aqua; */
-    margin: 20px;
-    font-size: 1.5em;
-
-}
-
-
-.note-txt{
-    /* width: fit-content; */
-    background-color: rgb(199, 241, 241);
-    padding: 10px;
-    border-radius: 5px;
- 
-
-}
-
-
-.note-img{
-    background-color:lightgoldenrodyellow;
-    padding: 50px;
-    border-radius: 5px;
-    
-}
-
-.note-img img{
-    max-width: 400px;
-
-}
-
-.note-todos{
-    background-color: lightsteelblue;
-    /* width: fit-content; */
-    padding: 20px;
-    border-radius: 5px;
-  
-}
-
-
-.note-todos ul{
-    list-style-type: circle;
-}
-
-.note-todos li{
-    display: block;
-    margin: 20px;
-}
-
-
-.note-video{
-    background-color: rgb(247, 208, 214);
-    /* width: fit-content; */
-    padding: 50px;
-    border-radius: 5px;
-
-}
-
-.actions{
-    background-color: rgb(176, 185, 185);
-    border-radius: 5px;
-    padding: 5px;
-    text-align: center;
 }

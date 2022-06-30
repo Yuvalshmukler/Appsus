@@ -22,7 +22,11 @@
 
 /* KEEPER */
 @import 'components/keeper/main-keeper.css';
+@import 'components/keeper/notes-app.css';
 @import 'components/keeper/note-add.css';
+@import 'components/keeper/note-preview.css';
+@import 'components/keeper/side-nav.css';
+@import 'components/keeper/note-filter.css';
 
 /* EMAIL */
 @import 'components/email/email-preview.css';
