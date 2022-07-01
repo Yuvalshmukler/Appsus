@@ -1,4 +1,7 @@
 
+import { keeperService }  from "../services/keeper-service.js"
+import { eventBus } from '../../../services/eventBus-service.js';
+
 export default {
     props: [],
     template: `
@@ -15,14 +18,12 @@ export default {
                         <li v-for="index in num" :key="index">
                         <input class="todo-list-item"
                             type="text"  v-model="input.todos[index]" placeholder="◻️ list item...">
-                            {{index}}
                         </li>
-                        <button @click="num++">+</button>                  
+                        <p class="plus-list" @click.stop="num++">◻️ +</p>                  
                     </ul>
                 </div>      
             </form> 
 
-            <!-- <pre>{{note}}</pre> -->
             
             <div class="note-add-icon-container">
                 <p :class="isActive('note-txt')" class="note-add-icon"  @click="type('note-txt')"><i class="fa-solid fa-pen"></i></p>
@@ -42,12 +43,16 @@ export default {
             todos: {},
         },
         note: {
+            id:null,
             type:  "note-txt",
             info: {
                 label: "new",
                 txt: "",
                 todos: [],
             },
+            style: {
+                backgroundColor: "rgba(21, 88, 88, 0.178)"
+                  },
           },
         
       }
@@ -55,19 +60,43 @@ export default {
     methods: {
         addNote(){
             if (this.note.type === 'note-txt') this.note.info.txt = this.input.txt
-            if (this.note.type === 'note-img' || this.note.type === 'note-video') {
+            else if (this.note.type === 'note-img' || this.note.type === 'note-video') {
                 this.note.info.title = this.input.txt
                 this.note.info.url = this.input.url    }
-            if (this.note.type === 'note-todos'){
+            else if (this.note.type === 'note-todos'){
                 this.note.info.title = this.input.txt
                 for (const todo in this.input.todos) {
                     this.note.info.todos.push({txt: this.input.todos[todo], doneAt: null})
                 }
                     
             }
-            this.note.id = null
+            keeperService.save(this.note).then(note => this.$emit("addNote", note))
+
             console.log('adding note', this.note)
-            this.$emit("addNote", this.note);
+            eventBus.emit('show-msg', { txt: 'new note was added', type: 'success' , link: '',})
+
+            this.note =  {
+                id:null,
+                type:  "note-txt",
+                info: {
+                    label: "new",
+                    txt: "",
+                    todos: [],
+                }, 
+                style: {
+                    backgroundColor: "rgba(21, 88, 88, 0.178)"
+                      },
+            }
+            
+            this.input = {
+                    txt: null,
+                    url: null,
+                    todos: {},
+                }
+            
+            this.num = 1
+
+            // this.$emit("addNote", this.note);
             // this.note.type = "note-txt" 
             // this.note.info.txt = "" 
         },
@@ -87,9 +116,7 @@ export default {
             this.note.info.txt = "" 
 
         },
-        addTodo(){
-            console.log('adding todo')
-        }
+      
     },
     computed: {
        
