@@ -78,6 +78,9 @@ function getNotes()  {
                 txt: "Learn from yesterday, live for today, hope for tomorrow. The important thing is not to stop questioning. | Albert Einstein",
                 label: 'empowering',
                 },
+              style: {
+                  backgroundColor: "#1558582d",
+                    },
               },
 
               {
@@ -89,7 +92,7 @@ function getNotes()  {
                 label: 'vacation',
                 },
               style: {
-              backgroundColor: "#00d"
+              backgroundColor: "#1558582d",
                 },
               },
 
@@ -105,6 +108,9 @@ function getNotes()  {
                   ],
                   label: 'important',
                 },
+                style: {
+                  backgroundColor: "#1558582d",
+                    },
               },
               {
                 id: utilService.makeId(),
@@ -114,6 +120,9 @@ function getNotes()  {
                   title: "This is a funny one",
                   label: 'important',
                   },
+                  style: {
+                    backgroundColor: "#1558582d",
+                      },
                 },
                 {
                   id: utilService.makeId(),
@@ -121,7 +130,10 @@ function getNotes()  {
                   info: {
                     txt: "Once we accept our limits, we go beyond them. | Albert Einstein",
                     label: 'important',
-                    }
+                    },
+                    style: {
+                      backgroundColor: "#1558582d",
+                        },
                   },
     
                   {
@@ -133,8 +145,8 @@ function getNotes()  {
                     label: 'vacation',
                     },
                   style: {
-                  backgroundColor: "#00d"
-                    }
+                  backgroundColor: "#1558582d",
+                    },
                   },
     
                   {
@@ -149,7 +161,10 @@ function getNotes()  {
                       { txt: "Cheese", doneAt: 187111111 },
                     ],
                     label: 'important',
-                    }
+                    },
+                    style: {
+                      backgroundColor: "#1558582d",
+                        },
                   },
                 
         
@@ -162,8 +177,8 @@ function getNotes()  {
                         label: 'empowering',
                         },
                       style: {
-                      backgroundColor: "#00d"
-                        }
+                      backgroundColor: "#1558582d",
+                        },
                       },
         
                      

@@ -1,0 +1,87 @@
+.note-edit{
+    position: fixed;
+    display: flex;
+    /* justify-content:flex-start;
+    align-items: center; */
+    top:30%;
+    left: 33%;
+    min-width:33%;
+    max-width: fit-content;
+    height: fit-content;
+    padding-bottom: 4em;
+    border-radius: 0.5em;
+    background-color: white;
+    box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.51);
+    z-index: 30;
+    text-align: center;
+}
+
+
+
+.note-edit input{
+    padding: 0.5em;
+    margin: 1em;
+    border: none;
+    font-size: 1.5em;
+    border-radius: 5px;
+
+
+}
+
+.note-edit-txt{
+    /* position: absolute; */
+    /* top: 3em; */
+    width: 90%;
+    /* right: 0.5em; */
+    box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.13);
+    margin-top: 5em;
+
+
+}
+
+.note-edit-label{
+    /* position: absolute; */
+    /* right: 0.5em;  */
+    display: flex;
+    padding: 0.3em;
+    background-color: rgba(255, 217, 0, 0.418);
+    /* font-size: 1em; */
+    width: fit-content;
+    align-self: flex-end;
+
+    /* margin-right: 0.5em; */
+}
+
+.note-edit-todo{
+    /* display:flex; */
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-size: 0.8em;
+}
+
+.note-edit button{
+    font-size: 2em;
+    position: absolute;
+    right: 1em;
+    bottom: 0.5em;
+    padding: 0.3em;
+    /* font-size: 1em; */
+    width: fit-content;
+    border: none;
+    cursor: pointer;
+}
+
+.close-note-edit{
+    font-size: 2em;
+    position: absolute;
+    top:0;
+    margin: 0.2em;
+    right: 1em;
+    bottom: 0.5em;
+    padding: 0.3em;
+    /* font-size: 1em; */
+    width: fit-content;
+    border: none;
+    cursor: pointer;
+}

@@ -4,7 +4,7 @@ export default {
     template: `
  <section v-if="msg" class="user-msg" :class="msg.type">
     <p>{{msg.txt}}</p>
-    <p @click="msg=''">X</p>
+    <!-- <p @click="msg=''">X</p> -->
     <div v-if="msg.link">
     <p>{{msg.link}}</p>
         <!-- <router-link :to="msg.link">Check it Out</router-link> -->  
@@ -26,7 +26,7 @@ export default {
             this.msg = msg
             setTimeout(() => {
                 this.msg = null
-            }, 3000)
+            }, 1500)
         }
     },
     computed: {},

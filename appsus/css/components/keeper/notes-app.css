@@ -1,9 +1,13 @@
-
+.notes-app{
+    position: relative;
+}
 
 .notes-app h1{
     margin-left: 3em;
 
 }
+
+
 
 
 
@@ -26,4 +30,9 @@
     display: inline;
     font-size: 1em;
     cursor: pointer;
+}
+
+.bg-color-input{
+    border-radius: 50%;
+    width: 2em;
 }
