@@ -10,22 +10,24 @@ export default {
     name: '',
     props: [''],
     template: `
-    <section>
+    <section v-if="emails">
         <!-- <email-header></email-header> -->
-        <email-filter @filtered="filterEmail" />
+        <email-filter @filtered="filterEmail" @readUnread="filterByReadUnread"/>
+        <button @click="sortByDate">Date</button>
+        <button>text</button>
         <section class="email-app-container" v-if="emails" >
             <aside class="side-menu">
                 <button @click="composeEmail" class="compose-btn">
                 <img src="./img/google-plus.png" class="google-plus">    
                 <span>Compose</span></button>
-                <email-side :emails="emails.length"></email-side>
+                <email-side :emails="emails"></email-side>
             </aside>
             <email-list
-                :emails="emailsToShow">            
+                :emails="emailsToShow">                           
             </email-list>
             <email-compose
                 @close="closCompose"
-                @emailCreated="getUpdateEmails" 
+                @added="getUpdateEmails" 
                 v-if="isCompose">
             </email-compose>
         </section>
@@ -46,6 +48,9 @@ export default {
                 this.emails = emails
             })
         eventBus.on('removed', this.removeEmail)
+        eventBus.on('isRead', this.updateIsRead)
+        eventBus.on('filterByInbox', this.filterByInbox)
+        eventBus.on('filterBySent', this.filterBySent)
         /* eventBus.on('closeCompo', this.closCompose) */
     },
     data() {
@@ -53,6 +58,11 @@ export default {
             emails: null,
             isCompose: false,
             filterBy: null,
+            filterByStatus: null,
+            sortBy: {
+                date: false,
+                emails: false
+            }
         }
     },
     methods: {
@@ -76,22 +86,34 @@ export default {
             if (this.isCompose) return
             this.isCompose = true
         },
-        closCompose(){
-            console.log('hiiiii');
+        closCompose() {
             this.isCompose = false
         }
-        ,filterEmail(filterBy) {
+        , filterEmail(filterBy) {
             this.filterBy = filterBy
-            console.log(this.filterBy);
         },
-        getUpdateEmails(){
-            /* later */
-            emailService.query()
-            .then(emails => {
-                /*  console.log(emails); */
-                this.emails = emails
-            })
+        filterByReadUnread(filterBy) {
+            this.filterByStatus = filterBy
+            console.log('filterByBoxes', this.filterByStatus);
 
+        },
+        getUpdateEmails(email) {
+            /* later */
+            emailService.createNewEmail(email)
+                .then((email) => this.emails.unshift(email))
+        },
+        sortByDate() {
+            console.log('lol');
+            this.sortBy.date = true
+        },
+        updateIsRead(emailId) {
+            emailService.updateReading(emailId)
+        },
+        filterByInbox() {
+            this.emails = this.emails.filter((email) => !email.isRead)
+        },
+        filterBySent() {
+            this.emails = this.emails.filter((email) => email.boxes.sentBox)
         }
     },
     computed: {
@@ -103,8 +125,13 @@ export default {
                 const regex = new RegExp(this.filterBy, "i");
                 emails = emails.filter((email) => regex.test(email.body));
             }
+            if (this.filterByStatus) {
+                console.log('hello read');
+                emails = emails.filter(email => email.isRead)
+            }
             return emails
-        }
+
+        },
     },
     unmounted() {
     },

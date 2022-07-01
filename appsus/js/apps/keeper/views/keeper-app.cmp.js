@@ -54,21 +54,21 @@ export default {
     },
     methods: {
         editNote(editPram, note) {
-            console.log('edit from app', editPram, note);
+            /* console.log('edit from app', editPram, note); */
             keeperService.edit(editPram, note)
         },
         duplicateNote(note) {
-            console.log('duplicating from app', note);
+           /*  console.log('duplicating from app', note); */
             keeperService.duplicate(note)
             this.notes.unshift(note)
         },
         setFilter(filterBy){
-            console.log('filterBy', filterBy)
+            /* console.log('filterBy', filterBy) */
             this.filterBy = filterBy
     
           },
         addNote(note){
-            console.log('adding note app', note),
+            /* console.log('adding note app', note), */
             keeperService.save(note).then(note => this.notes.unshift(note) )
             
         }
@@ -90,7 +90,7 @@ export default {
                 notes = notes.filter(note => 
                     note.type === this.filterBy.type)
             }
-            console.log('notes to show', notes )
+            /* console.log('notes to show', notes ) */
             return notes
         },
         unPinnedNotes(){
@@ -109,7 +109,7 @@ export default {
                 notes = notes.filter(note => 
                     note.type === this.filterBy.type)
             }
-            console.log('notes to show', notes )
+          /*   console.log('notes to show', notes ) */
             return notes
         }
     },

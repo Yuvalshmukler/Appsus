@@ -24,11 +24,18 @@ function emit(eventName, data) {
 export const eventBus = { on, emit };
 
 export function deleteEmail(emailId){
-    console.log(emailId);
     emit('removed',emailId)
-   /*  console.log('please',emailId); */
 }
+export function updateIsRead(emailId){
+    emit('isRead',emailId)
+}
+
 export function closeCompose(){
-    console.log('isOpen');
     emit('closeCompo')
+}
+export function filterInbox(){
+    emit('filterByInbox')
+}
+export function filterSentEmail(){
+    emit('filterBySent')
 }

@@ -34,7 +34,7 @@ export default {
                     rows="10">
                 </textarea>
                 <div class="form-btns">
-                    <button class="send-btn">
+                    <button class="send-btn" >
                         send
                     </button>
                 </div>
@@ -48,12 +48,12 @@ export default {
         return {
             email: {
                 sender: 'me',
-                to:null,
+                to: null,
                 subject: null,
                 body: '',
                 boxes: {
                     inbox: true,
-                    sentBox: false,
+                    sentBox: true,
                     draft: false,
                     star: false,
                 }
@@ -65,17 +65,14 @@ export default {
     methods: {
         sendEmail() {
             /* console.log('email',this.email); */
-            emailService.createNewEmail(this.email)
-            .then(email => {
-                console.log(email);
-                /* this.$emit('emailCreated') */
-                this.$emit('close')
-            })           
-        },
-        onCloseCompons(){
-            this.$emit('close')
-        }
 
+            /* this.$emit('emailCreated') */
+            this.$emit('added', this.email)
+            this.$emit('close')
+        },
+        onCloseCompons() {
+            this.$emit('close')
+        },
     },
     computed: {
     },
@@ -83,3 +80,4 @@ export default {
     },
 
 }
+
