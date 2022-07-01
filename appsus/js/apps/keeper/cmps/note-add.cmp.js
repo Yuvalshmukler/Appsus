@@ -71,6 +71,7 @@ export default {
                     
             }
             keeperService.save(this.note).then(note => this.$emit("addNote", note))
+            keeperService.getLabels()
 
             console.log('adding note', this.note)
             eventBus.emit('show-msg', { txt: 'new note was added', type: 'success' , link: '',})

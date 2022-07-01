@@ -1,5 +1,6 @@
 
 import { keeperService }  from "../services/keeper-service.js"
+import { eventBus } from '../../../services/eventBus-service.js';
 
 import noteAdd from "../cmps/note-add.cmp.js";
 import noteList from "../cmps/note-list.cmp.js";
@@ -59,13 +60,18 @@ export default {
     data() {
         return {
             notes: null,
-            filterBy: null,
+            filterBy: {
+                label: "",
+                txt: "",
+                type:  "",
+              },
             noteToEdit: null,
         }
     },
 
     created() {
         keeperService.query().then(notes => this.notes = notes )
+        this.unsubscribe = eventBus.on('filter-nav', this.filterNav)
     },
 
     components:{
@@ -77,7 +83,7 @@ export default {
     },
     methods: {
         editNote(editPram, note) {
-            /* console.log('edit from app', editPram, note); */
+            console.log('edit from app', editPram, note); 
             keeperService.edit(editPram, note)
         },
         duplicateNote(note) {
@@ -94,6 +100,11 @@ export default {
             /* console.log('adding note app', note), */
             keeperService.save(note).then(note => this.notes.unshift(note) )
             
+        },
+        filterNav(filterBy){
+            console.log('recived from bus', filterBy)
+            if(!filterBy.value) this.filterBy[filterBy.by] = ''
+            this.filterBy[filterBy.by] = filterBy.value
         }
     },
     computed: {
@@ -140,6 +151,7 @@ export default {
         },
     },
     unmounted() {
+        this.unsubscribe()
     },
 
 }
