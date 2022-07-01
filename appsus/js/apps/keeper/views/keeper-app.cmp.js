@@ -76,23 +76,8 @@ export default {
         noteEdit,
     },
     methods: {
-<<<<<<< HEAD
         editNote(editPram, note) {
             /* console.log('edit from app', editPram, note); */
-=======
-        editNote(note){
-            console.log('recived note', note)
-            this.noteToEdit = note
-
-        },
-        clearEditNote(note){
-            console.log('clearing note to Edit')
-            this.noteToEdit = null
-            keeperService.query().then(notes => this.notes = notes )
-        },
-        editProp(editPram, note) {
-            console.log('edit prop from app', editPram, note);
->>>>>>> 572d5565ea441e94ebdd3cc49d5d49cf8ee2a459
             keeperService.edit(editPram, note)
         },
         duplicateNote(note) {
@@ -106,15 +91,8 @@ export default {
     
           },
         addNote(note){
-<<<<<<< HEAD
             /* console.log('adding note app', note), */
             keeperService.save(note).then(note => this.notes.unshift(note) )
-=======
-            keeperService.query().then(notes => this.notes = notes )
-            // console.log('adding note app', note)
-            // const noteToAdd = note.then(not)
-            // this.notes.unshift(note) 
->>>>>>> 572d5565ea441e94ebdd3cc49d5d49cf8ee2a459
             
         }
     },
@@ -153,17 +131,10 @@ export default {
                                                 ))
             }
             if (this.filterBy?.type) {
-<<<<<<< HEAD
                 notes = notes.filter(note => 
                     note.type === this.filterBy.type)
             }
           /*   console.log('notes to show', notes ) */
-=======
-                 notes = notes.filter(note => 
-                note.type === this.filterBy.type)
-                    }
-                    console.log('notes to show', notes )
->>>>>>> 572d5565ea441e94ebdd3cc49d5d49cf8ee2a459
             return notes
             
         },
