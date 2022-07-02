@@ -1,51 +1,18 @@
-
-
-
-.book-filter{
-    background-color: whitesmoke;
-    text-align: center;
-    width: 700px;
-    border-radius: 20px;
-    padding: 20px;
-    margin: 30px auto;
-    font-size: 20px;
-    
+.book-app{
+    position: relative;
 }
 
-.book-filter  {
-    padding: 20px;
-    margin-bottom: 20px;
-
-    
-}
-
-.book-filter p{
-    display: inline;
-    padding: 20px;
-    
-}
-
-.book-list ul{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 10px;
-    list-style: none;
-
+.add-book-link{
+    font-size: 3.5em;
+    color:rgb(51, 51, 51);
+    padding: 30px;
+    position: absolute;
+    top: 6px;
+    right:10px;
 }
 
 
-.book-preview-container{
-   background-color: cadetblue;
-   color: whitesmoke;
-   text-align: center;
-   font-size: 1.7em;
-   text-transform: capitalize;
-   border-radius: 20px;
-   position: relative;
-   height: 300px;
-   padding: 10px;
-  
-}
+
 
 
 .book-details{
@@ -67,15 +34,6 @@
     border-radius: 20px;
 }
 
-
-.price{
-    position: absolute;
-    bottom: 2px;
-    right: 5px;
-    font-size: 0.8em;
-    font-style: italic;
-    color: lightgoldenrodyellow;
-}
 
 .high{
     color: red;

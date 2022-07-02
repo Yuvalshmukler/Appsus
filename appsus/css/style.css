@@ -19,6 +19,9 @@
 
 /* BASIC COMPONENTS */
 @import 'components/user-msg.css';
+
+/* BOOK */
+
 @import 'components/book/main-book.css';
 
 /* KEEPER */

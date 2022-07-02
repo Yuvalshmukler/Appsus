@@ -8,7 +8,10 @@ export default {
     template: `
     <section class="book-app">
       <div  v-if='!selectedBook'>
-        <router-link to="/Add"> Add a Book</router-link>
+        <router-link class="add-book-link" to="/Add">
+          <i class="fa-solid fa-plus"></i>
+          <i class="fa-solid fa-book"></i>
+                              </router-link>
         <book-filter @filtered="setFilter"></book-filter>
         <book-list :books="booksToShow" @selected="selectBook"></book-list>
     </div>
