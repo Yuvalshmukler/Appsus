@@ -5,6 +5,7 @@
     display: grid;
     grid-template-columns: 0.2fr 1fr 2fr 5fr 0.6fr;
     grid-template-rows: auto;
+    
 }
 
 .email-preview:hover {
@@ -14,10 +15,10 @@
     
 }
 .email-preivew-star{
-    color:rgba(223, 219, 219, 0.68);
+    color:rgba(129, 127, 127, 0.68);
 }
 .yellow{
-    color: rgb(248, 248, 3);
+    color: rgba(240, 240, 64, 0.84);
 }
 .email-preview{
 border-bottom: 1px solid rgba(147, 146, 146, 0.345);
@@ -25,9 +26,12 @@ border-bottom: 1px solid rgba(147, 146, 146, 0.345);
 }
 .unread{
     background-color: rgba(205, 205, 205, 0.68);
+    font-weight: 600;
+
 }
 .read{
     background-color: rgb(253, 253, 253);
+    font-weight: 300;
 }
 .email-preview-content {
     display: inline;

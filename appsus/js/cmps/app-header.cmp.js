@@ -6,7 +6,7 @@ export default {
            <h1>Apssus</h1>
           </div>
         <nav class="nav-bar">
-          <button  @click="toggleMenu = !toggleMenu">
+          <button @click="toggleMenu = !toggleMenu">
             <i class="fa-solid fa-bars"
             class="nav-menu">
             </i></button>

@@ -7,7 +7,6 @@ export default {
         class="search-input"
         v-model="filterBy.body"
         @input="filter"
-        
          placeholder="search Email">
          <select class="filter-Read" @change="getFilter($event)" id="">
              <option  value="All">All</option>

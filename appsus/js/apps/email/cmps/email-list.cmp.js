@@ -22,8 +22,8 @@ export default {
         }
     },
     methods: {
-        isReaded(email){
-            return {unread: !email.isRead , read:email.isRead}
+        isReaded(email) {
+            return { unread: !email.isRead, read: email.isRead }
         }
     },
     computed: {

@@ -12,15 +12,18 @@ export default {
     template: `
     <section v-if="emails">
         <!-- <email-header></email-header> -->
-        <email-filter @filtered="filterEmail" @readUnread="filterByReadUnread"/>
+        <email-filter @filtered="filterEmail" 
+        @readUnread="filterByReadUnread"/>
         <button @click.prevent="sortByDate">Date</button>
         <button @click.prevent="sortByTitle">text</button>
         <section class="email-app-container" v-if="emails" >
             <aside class="side-menu">
                 <button @click="composeEmail" class="compose-btn">
-                <img src="./img/google-plus.png" class="google-plus">    
-                <span>Compose</span></button>
-                <email-side :emails="emails"></email-side>
+                <img src="./img/google-plus.png" class="google-plus">   
+                compos 
+                </button>
+                <email-side :emails="emails">
+                </email-side>
             </aside>
             <email-list
                 :emails="emailsToShow">                           
@@ -51,6 +54,8 @@ export default {
         eventBus.on('isRead', this.updateIsRead)
         eventBus.on('filterByInbox', this.filterByInbox)
         eventBus.on('filterBySent', this.filterBySent)
+        eventBus.on('filterAll', this.filterAll)
+        eventBus.on('filterByInput', this.filterByInput)
         /* eventBus.on('closeCompo', this.closCompose) */
     },
     data() {
@@ -59,6 +64,7 @@ export default {
             isCompose: false,
             filterBy: null,
             filterByStatus: null,
+            filterByBox: null,
         }
     },
     methods: {
@@ -109,13 +115,14 @@ export default {
         updateIsRead(emailId) {
             emailService.updateReading(emailId)
         },
-        filterByInbox() {
-            this.emails = this.emails.filter((email) => !email.isRead)
-        },
-        filterBySent() {
-            this.emails = this.emails.filter((email) => email.boxes.sentBox)
+
+        filterByBoxes(box) {
+            console.log('im in the app');
+            this.filterByBox = box
         }
     },
+
+
     computed: {
         emailsToShow() {
             if (!this.emails) return
@@ -126,7 +133,8 @@ export default {
                     return regex.test(email.body) || regex.test(email.subject) || regex.test(email.sender)
                 });
             }
-            if (this.filterByStatus) {
+
+            if (this.filterByStatus || this.filterByBox) {
                 if (this.filterByStatus === 'read') {
                     emails = emails.filter(email => email.isRead)
                 } else if (this.filterByStatus === 'All') {

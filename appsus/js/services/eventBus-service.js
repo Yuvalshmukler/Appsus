@@ -39,3 +39,6 @@ export function filterInbox(){
 export function filterSentEmail(){
     emit('filterBySent')
 }
+export function filterStatus(){
+    emit('filterByInput')
+}

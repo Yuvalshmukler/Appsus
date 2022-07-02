@@ -1,12 +1,18 @@
 .search-input{
-    height: 46px;
-    padding: 0;
-    width: 25rem;
-    border-radius: 8px;
-    border:none;
-    margin-left: 15rem;
-    background-color: rgba(212, 206, 206, 0.559);
+    background-color: rgba(205, 205, 205, 0.68);
+    width:35rem;
+    display: inline;
+    border-radius: 0.5em;
+    padding: 1em;
+    border: none;
+    margin-left: 18.5rem;
+    font-size: 1em;
 }
+
 .filter-Read{
-    height:55px;
+    background-color: rgba(205, 205, 205, 0.68);
+    padding: 1.2em;
+    border: none;
+    margin-left: 5px;
+    border-radius: 0.5em;
 }

@@ -8,10 +8,12 @@ export default {
     <section v-if="emails">
         <ul class="side-bar-email">
             <pre></pre>
-            <li @click="filterByReaden"><i class="fa-solid fa-inbox"></i>{{CountunReaden}}</li>
-            <li><i class="fa-solid fa-star"></i>{{CountunStars}}</li>
-            <li @click="filterBySentEmail"><i class="fa-solid fa-paper-plane"></i>{{CountunSentEmails}}</li>
-            <li><i class="fa-brands fa-firstdraft"></i>{{CountunDraft}}</li>
+            <li @click="filterByReaden"><i class="fa-solid fa-inbox">
+            </i>{{CountunReaden}}</li>
+            <li  @click="filterByStatus(star)"><i class="fa-solid fa-star"></i>{{CountunStars}}</li>
+            <li @click="filterByStatus(sentBox)"><i class="fa-solid fa-paper-plane">
+            </i>{{CountunSentEmails}}</li>
+            <li  @click="filterByStatus(draft)"><i class="fa-brands fa-firstdraft"></i>{{CountunDraft}}</li>
         </ul>
     </section>
     `,
@@ -19,14 +21,16 @@ export default {
     },
     data() {
         return {
+            filterBy: null
         }
     },
     methods: {
         filterByReaden() {
             filterInbox()
         },
-        filterBySentEmail() {
-            filterSentEmail()
+        filterByStatus(status) {
+            console.log('im in the side bar');
+            filterStatus(status)
         }
     },
 
