@@ -59,6 +59,7 @@ export default {
     },
     methods: {
         addNote(){
+            if(!this.input.txt) return
             if (this.note.type === 'note-txt') this.note.info.txt = this.input.txt
             else if (this.note.type === 'note-img' || this.note.type === 'note-video') {
                 this.note.info.title = this.input.txt
@@ -74,7 +75,8 @@ export default {
 
             console.log('adding note', this.note)
             eventBus.emit('show-msg', { txt: 'new note was added', type: 'success' , link: '',})
-
+            eventBus.emit('render-label', this.note.info.label)
+            
             this.note =  {
                 id:null,
                 type:  "note-txt",
@@ -116,10 +118,12 @@ export default {
             this.note.info.txt = "" 
 
         },
+        
       
     },
     computed: {
        
     },
+    
   }
   

@@ -13,7 +13,9 @@ export default {
             <!-- <pre>{{notes}}</pre> -->
          <ul class="notes-preview-container">
             <li v-for="(note,idx) in notes" :key="note.id" class="note-preview"  >
-                <p class="pin" v-if="note.isPinned"><i class="fa-solid fa-thumbtack"></i></p>
+
+                <p @click="unpin(note)" class="pin" v-if="note.isPinned"><i class="fa-solid fa-thumbtack"></i></p>
+
                 <note-preview  :style="{'background-color': note.style.backgroundColor}" :note="note"/> 
                 <div class="actions">
                        <p @click="editProp('isTrash', note)"><i class="fa-solid fa-trash-can"></i></p>
@@ -60,9 +62,11 @@ export default {
         },
         editNote(note){
             console.log('emit edit note', note)
-            this.$emit('editNote', note)
-          
-         
+            this.$emit('editNote', note)             
+        },
+        unpin(note){
+            console.log('unpin', note)
+            this.$emit('unpin', note)  
         },
      
     },

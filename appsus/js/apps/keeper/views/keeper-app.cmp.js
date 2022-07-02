@@ -1,5 +1,6 @@
 
 import { keeperService }  from "../services/keeper-service.js"
+import { eventBus } from '../../../services/eventBus-service.js';
 
 import noteAdd from "../cmps/note-add.cmp.js";
 import noteList from "../cmps/note-list.cmp.js";
@@ -28,7 +29,9 @@ export default {
                
                 <div v-if="noteToEdit">
                     <div v-if="noteToEdit" class="main-screen"></div>
-                    <note-edit v-if="noteToEdit" :note="noteToEdit" @clearEditNote="clearEditNote"/> 
+                    <note-edit v-if="noteToEdit" :note="noteToEdit" 
+                            @updateNote="updateNote"
+                            @clearEditNote="clearEditNote"/> 
                 </div> 
 
                 <h1 class="pin-note-heading"><i class="fa-solid fa-thumbtack"></i> Pinned</h1>
@@ -37,6 +40,7 @@ export default {
                 @editNote="editNote"
                 @editProp="editProp"
                 @duplicateNote = "duplicateNote"
+                @unpin="unpin"
                 />
                 <hr>
               
@@ -45,13 +49,10 @@ export default {
                 @editNote="editNote"
                 @editProp="editProp"
                 @duplicateNote = "duplicateNote"
+                @unpin="unpin"
                 />
 
-                <!-- <note-list :notes="unPinnedNotes" 
-                @editNote="editNote"
-                @editProp="editProp"
-                @duplicateNote = "duplicateNote"
-                   />  -->
+                
              </div>
         </section>
         `,
@@ -59,13 +60,18 @@ export default {
     data() {
         return {
             notes: null,
-            filterBy: null,
+            filterBy: {
+                label: "",
+                txt: "",
+                type:  "",
+              },
             noteToEdit: null,
         }
     },
 
     created() {
         keeperService.query().then(notes => this.notes = notes )
+        this.unsubscribe = eventBus.on('filter-nav', this.filterNav)
     },
 
     components:{
@@ -77,23 +83,26 @@ export default {
     },
     methods: {
         editNote(note){
-            console.log('recived note', note)
             this.noteToEdit = note
-
         },
-        clearEditNote(note){
-            console.log('clearing note to Edit')
+        updateNote(note){
+            keeperService.save(note)
+                    .then(note => 
+                        {var idx = this.notes.findIndex(n => n.id === note.id)
+                           this.notes[idx] = note } )      
             this.noteToEdit = null
-            keeperService.query().then(notes => this.notes = notes )
+           
         },
         editProp(editPram, note) {
-            console.log('edit prop from app', editPram, note);
+            console.log('edit from app', editPram, note); 
             keeperService.edit(editPram, note)
         },
         duplicateNote(note) {
            /*  console.log('duplicating from app', note); */
-            keeperService.duplicate(note)
-            this.notes.unshift(note)
+
+            keeperService.duplicate(note).then(note => this.notes.unshift(note) )
+            // keeperService.query().then(notes => this.notes = notes )
+            // this.notes.unshift(note)
         },
         setFilter(filterBy){
             /* console.log('filterBy', filterBy) */
@@ -101,12 +110,25 @@ export default {
     
           },
         addNote(note){
+            /* console.log('adding note app', note), */
+            keeperService.save(note).then(note => this.notes.unshift(note) )         
+        },
+        filterNav(filterBy){
+            console.log('recived from bus', filterBy)
+            if(!filterBy.value) this.filterBy[filterBy.by] = ''
+            this.filterBy[filterBy.by] = filterBy.value
+        },
+        clearEditNote(note){
+            this.noteToEdit = null
             keeperService.query().then(notes => this.notes = notes )
-            // console.log('adding note app', note)
-            // const noteToAdd = note.then(not)
-            // this.notes.unshift(note) 
-            
-        }
+        },
+        unpin(note){
+            note.isPinned = false
+            keeperService.save(note)
+            .then(note => 
+                {var idx = this.notes.findIndex(n => n.id === note.id)
+                   this.notes[idx] = note } )   
+        },
     },
     computed: {
         pinnedNotes(){
@@ -118,15 +140,14 @@ export default {
                     note.info.label === this.filterBy.label)
             }
             if (this.filterBy?.txt ) {
-                notes = notes.filter(note => ( (note.info.txt && note.info.txt.startsWith(this.filterBy.txt) )||
-                                           ( note.info.title && note.info.title.startsWith(this.filterBy.txt))
-                                            ))
+                const regex = new RegExp(this.filterBy.txt, "i");
+               notes = notes.filter(note => (regex.test(note.info.txt) || regex.test(note.info.title)))    
             }
             if (this.filterBy?.type) {
                 notes = notes.filter(note => 
                     note.type === this.filterBy.type)
             }
-            /* console.log('notes to show', notes ) */
+          
             return notes
         },
         unPinnedNotes(){
@@ -138,20 +159,21 @@ export default {
                     note.info.label === this.filterBy.label)
             }
             if (this.filterBy?.txt ) {
-                    notes = notes.filter(note => ( (note.info.txt && note.info.txt.startsWith(this.filterBy.txt) )||
-                                               ( note.info.title && note.info.title.startsWith(this.filterBy.txt))
-                                                ))
+                const regex = new RegExp(this.filterBy.txt, "i");
+                notes = notes.filter(note => (regex.test(note.info.txt) || regex.test(note.info.title)))
+    
             }
             if (this.filterBy?.type) {
-                 notes = notes.filter(note => 
-                note.type === this.filterBy.type)
-                    }
-                    console.log('notes to show', notes )
+                notes = notes.filter(note => 
+                    note.type === this.filterBy.type)
+            }
+        
             return notes
             
         },
     },
     unmounted() {
+        this.unsubscribe()
     },
 
 }

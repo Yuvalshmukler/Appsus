@@ -15,6 +15,7 @@ export const keeperService = {
     get,
     save,
     duplicate,
+    getLabels,
     
 }
 
@@ -24,9 +25,19 @@ function query() {
        
 }
 
+function getLabels(){
+  let labels=[]
+  let notes = utilService.loadFromStorage(NOTES_KEY);
+  notes.forEach(note => {
+    if (!labels.includes(note.info.label)) labels.push(note.info.label)
+    })
+  // console.log(labels)
+  return labels
+}
+
 
 function edit(editPram, note){
-  /* console.log('edit service', editPram, note) */
+  console.log('edit service', editPram, note)
   note[editPram] = true
   save(note)
 
@@ -34,10 +45,12 @@ function edit(editPram, note){
 
 function duplicate(note){
   /* console.log('duplicate service', note) */
-  note.id = utilService.makeId()
-  storageService.post(NOTES_KEY, note)
+  // note.id = utilService.makeId()
+  return storageService.post(NOTES_KEY, note)
 
 }
+
+
 
 function remove(noteId) {
   // return Promise.reject('Big Error Badd')
@@ -102,8 +115,8 @@ function getNotes()  {
               info: {
                 title: "Stuff I need to do",
                 todos: [
-                  { txt: "Pay thw water bill", doneAt: null },
-                  { txt: "Take the washing machine fixed", doneAt: 187111111 },
+                  { txt: "Pay the water bill", doneAt: null },
+                  { txt: "Take the car to the shop", doneAt: 187111111 },
                   { txt: "Call Mom", doneAt: 187111111 },
                   ],
                   label: 'important',

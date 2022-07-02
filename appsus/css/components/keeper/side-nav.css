@@ -7,14 +7,39 @@
     height: 100%;
 }
 
-.note-nav h4 {
-    padding: 0.8em;
-    padding-left: 2em;
-    font-size: 1.5em;
-}
-
 .active-nav {
     background-color: rgba(255, 217, 0, 0.418);
     margin: 1em 0.1em;
     border-radius: 20px;
+    font-style: bold;
+    text-decoration: underline;
+}
+
+.note-nav h4 {
+    padding: 0.8em;
+    padding-left: 2em;
+    font-size: 1em;
+}
+
+.note-nav h3 {
+    padding: 0.2em;
+    font-size: 1em;
+    text-transform: capitalize;
+    cursor: pointer;
+    background-color: rgba(197, 207, 196, 0.418);
+    margin: 1em 0.1em;
+    /* margin-sleft: 3em; */
+    border-radius: 20px;
+    width: fit-content;
+}
+
+
+
+
+.type-nav{
+    padding: 0.2em;
+}
+
+.test {
+    color: red; 
 }
