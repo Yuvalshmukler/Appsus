@@ -1,13 +1,16 @@
 
-import { keeperService }  from "../services/keeper-service.js"
+import { eventBus } from '../../../services/eventBus-service.js';
 
 export default {
     props: ["note"],
     template: `
         <section class="note-edit">    
-    
 
-            <form @submit.prevent="saveUpdate">       
+
+        <p @click.stop="close" class="close-note-edit"><i class="fa-solid fa-xmark"></i></p>
+
+
+                <form @submit.prevent="saveUpdate">       
                 
                 <input type="text" class="note-edit-label" v-model="note.info.label">
 
@@ -32,9 +35,10 @@ export default {
                 <button ><i class="fa-solid fa-pen-to-square"></i></button>
             </form>
 
-            <!-- <p @click.stop="close" class="close-note-edit"><i class="fa-solid fa-xmark"></i></p> -->
-           
+
+
           
+                     
         </section>
         `,
     data() {
@@ -46,8 +50,10 @@ export default {
     methods: {
         saveUpdate(){
             console.log('saving update', this.note)
-            keeperService.save(this.note)
-            this.$emit("clearEditNote", this.note)
+            this.$emit("updateNote", this.note)
+            eventBus.emit('show-msg', { txt: 'note was updated', type: 'success' , link: '',})
+            eventBus.emit('render-label', this.note.info.label)
+            
         },
         close(){
             console.log('closing')
