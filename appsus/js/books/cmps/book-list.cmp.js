@@ -8,7 +8,7 @@ export default {
         <ul>
             <li v-for="(book,idx) in books" :key="book.id"  class="book-preview-container">
                 <book-preview :book="book"/>
-                <router-link :to="'/book/'+book.id">Book Details</router-link>
+                <router-link class="detail-link" :to="'/book/'+book.id"><i class="fa-solid fa-info"></i></router-link>
             </li>
         </ul>
     </section>

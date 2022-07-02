@@ -1,0 +1,54 @@
+
+.book-preview-container{
+    background-color: white;
+    color:darkgray;
+    text-align: center;
+    font-size: 1.7em;
+    text-transform: capitalize;
+    position: relative;
+    height: 370px;
+    max-width: 300px;
+    box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.21);
+    border: 1px solid gainsboro;
+    border-radius: 5px;
+    color:rgb(51, 51, 51);
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+   
+ }
+ 
+
+ .book-preview-img{
+    width: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid gainsboro;
+    margin-top: 20px;
+
+    
+
+ }
+
+ .price{
+    position: absolute;
+    bottom: 2px;
+    right: 10px;
+    font-size: 0.8em;
+    font-style: italic;
+    color:rgb(51, 51, 51);
+}
+
+.detail-link{
+    position: absolute;
+    bottom: 25px;
+    left: 20px;
+    font-size: 0.8em;
+    color:rgb(51, 51, 51);
+    background-color: gainsboro;
+    width: 1.5em;
+    padding: 0.15em;
+    border-radius: 50%;
+    
+}

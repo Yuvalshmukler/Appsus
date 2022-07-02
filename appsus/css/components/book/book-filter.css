@@ -1,0 +1,55 @@
+
+
+.book-filter{
+    /* background-color: aqua; */
+     color:rgb(51, 51, 51);
+    padding: 2em;
+    /* display: flex; */
+    border: none;
+    /* justify-content: flex-start;
+    align-items: center; */
+}
+
+
+.book-search-input{
+    box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.51);
+    width:50%;
+    display: inline;
+    border-radius: 0.5em;
+    padding: 1em;
+    margin: 0 40px 15px;
+    border: none;
+    font-size: 1.5em;
+}
+
+.book-filter h2{
+    display: inline;
+    font-size: 2.5em;
+   
+    
+}
+
+.book-filter h1{
+    
+    display: inline;
+    font-size: 1.5em;
+    margin: 1em;
+    
+}
+
+.book-filter p{
+    display: inline;
+    /* font-size: 2em; */
+    margin: 1em;
+    
+}
+
+.book-price-input{
+    display: inline;
+    font-size: 1.5em;
+    margin: 1em;
+}
+
+.price-title{
+    margin: 0 20px 15px;
+}

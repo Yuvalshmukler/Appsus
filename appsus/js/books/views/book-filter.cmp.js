@@ -1,21 +1,22 @@
 export default {
     template: `
    <section class="book-filter">
-   <form @submit.prevent="filter">
-      <label for="title">Search title:</label>
-        <input type="text" id="title" v-model="filterBy.title">
-        <br>
-        <br>
-      <label for="fromPrice">Start Price:</label>
-        <input type="range" id="fromPrice" min="0" max="500" v-model="filterBy.fromPrice">
-        <p>{{filterBy.fromPrice}}</P>
-      <label for="toPrice">Max Price:</label>
-        <input type="range" id="toPrice" min="0" max="500" v-model="filterBy.toPrice">
-        <p>{{filterBy.toPrice}}</P>
-        <br>
-        <br>
-      <button>Filter</button>    
-    </form>
+  
+        <input @change="filter" class="book-search-input" type="text" id="title" v-model="filterBy.title" placeholder="Search...">
+        <h2><i class="fa-solid fa-magnifying-glass"></i></h2>
+        
+      <div class="price-title">
+        <h1><i class="fa-solid fa-dollar-sign"></i>
+        </h1>
+        <input  @change="filter" type="range" min="0" max="500" v-model="filterBy.fromPrice">
+        <p>{{filterBy.fromPrice}}</p>
+        
+        <h1> <i class="fa-solid fa-arrows-left-right-to-line"></i></h1>
+        <input  @change="filter" type="range" id="toPrice" min="0" max="500" v-model="filterBy.toPrice">
+        <p >{{filterBy.toPrice}}</p>
+      <div>
+     
+    
    </section>
   `,
     data() {
@@ -23,7 +24,7 @@ export default {
         filterBy: {
           title: "",
           fromPrice:0, 
-          toPrice:1000,
+          toPrice:500,
         },
       };
     },
