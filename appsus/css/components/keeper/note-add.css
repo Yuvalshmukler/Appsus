@@ -2,12 +2,12 @@
 .note-add{
     display: flex;
     /* background-color: aqua; */
-    width: 95%;
+    max-width: 100vh;
     margin: 3.5em;
     box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.51);
     border-radius: 0.5em;
     justify-content: space-between;
-    align-items: center;
+    align-items:flex-start;
 }
 
 .note-add form{
@@ -25,8 +25,20 @@
 }
 
 
+
+.add-mobile{
+    display: none;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin: 10px 50px;
+    width:2em;
+    height:2em;
+}
+
 .note-add-icon-container{
     justify-content: flex-end;
+    margin-top: 2em;
 }
 
 .note-add-icon{

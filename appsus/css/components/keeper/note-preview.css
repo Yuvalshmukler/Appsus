@@ -1,7 +1,6 @@
 
 .note-preview {
-    /* width: 500px; */
-    margin: 20px;
+    margin: 15px;
     /* background-color: aqua; */
     padding: 3px;
     font-size: 1.5em;
@@ -33,7 +32,7 @@
 }
 
 .note-img img{
-    max-width: 400px;
+    max-width: 300px;
 
 }
 
