@@ -38,6 +38,7 @@ export default {
     },
     methods: {
         toggleStar(){
+            this.email.boxes.isStarred = true
             this.isStarred = !this.isStarred
         }
     },

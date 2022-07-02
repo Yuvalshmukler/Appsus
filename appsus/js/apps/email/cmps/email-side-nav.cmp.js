@@ -1,19 +1,16 @@
-import { emailService } from '../services/email.service.js'
-import { filterInbox, filterSentEmail }
-    from '../../../services/eventBus-service.js'
-
 export default {
     props: ["emails"],
     template: `
     <section v-if="emails">
         <ul class="side-bar-email">
             <pre></pre>
-            <li @click="filterByReaden"><i class="fa-solid fa-inbox">
+            <li @click="filterByStatus('all')"><i class="fa-solid fa-envelope"></i>all</li>
+            <li @click="filterByStatus('isRead')"><i class="fa-solid fa-inbox">
             </i>{{CountunReaden}}</li>
-            <li  @click="filterByStatus(star)"><i class="fa-solid fa-star"></i>{{CountunStars}}</li>
-            <li @click="filterByStatus(sentBox)"><i class="fa-solid fa-paper-plane">
+            <li @click="filterByStatus('star')"><i class="fa-solid fa-star"></i>{{CountunStars}}</li>
+            <li @click="filterByStatus('sentBox')"><i class="fa-solid fa-paper-plane">
             </i>{{CountunSentEmails}}</li>
-            <li  @click="filterByStatus(draft)"><i class="fa-brands fa-firstdraft"></i>{{CountunDraft}}</li>
+            <li @click="filterByStatus('draft')"><i class="fa-brands fa-firstdraft"></i>{{CountunDraft}}</li>
         </ul>
     </section>
     `,
@@ -29,9 +26,9 @@ export default {
             filterInbox()
         },
         filterByStatus(status) {
-            console.log('im in the side bar');
-            filterStatus(status)
-        }
+            console.log(status);
+            this.$emit('filtered', status)
+        },
     },
 
     computed: {

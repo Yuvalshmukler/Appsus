@@ -5,15 +5,18 @@
     right: 1rem;
     bottom: 0;
     width: 33em;
-   /*  border-radius: 25px; */
+    margin-right: 6.8rem;
+    /*  border-radius: 25px; */
     -webkit-box-shadow: 3px 6px 10px 0px rgba(0, 0, 0, 0.55);
     box-shadow: 3px 6px 10px 0px rgba(0, 0, 0, 0.55);
 }
+
 .compose-form {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
 }
+
 .compose-header {
     display: flex;
     justify-content: space-between;
@@ -21,12 +24,14 @@
     background-color: #202020;
     height: 2.5rem;
 }
+
 .compose-header span {
     color: white;
     font-size: 15px;
     font-weight: 300;
     margin-inline-start: 10px;
 }
+
 .email-compose textarea {
     font-size: 1.25rem;
     resize: none;
@@ -39,16 +44,19 @@
     align-items: center;
     background-color: white;
 }
+
 .form-txt {
     border: none;
     padding: 13px;
 }
+
 .form-txt[type="text"] {
     font-size: 1rem;
     box-shadow: inset 0 -1px 0 0 rgba(130, 135, 141, 0.322);
     height: 2rem;
 }
-.send-btn{
+
+.send-btn {
     font-size: 1rem;
     text-align: center;
     background-color: #1a73e8;
@@ -60,9 +68,11 @@
     margin: 10px;
     color: white;
 }
+
 .send-btn:hover {
-    -webkit-box-shadow: 0px 10px 13px -7px #000000, 3px 6px 12px 0px rgba(0,0,0,0); 
-    box-shadow: 0px 10px 13px -7px #000000, 3px 6px 12px 0px rgba(0,0,0,0);}
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, 3px 6px 12px 0px rgba(0, 0, 0, 0);
+    box-shadow: 0px 10px 13px -7px #000000, 3px 6px 12px 0px rgba(0, 0, 0, 0);
+}
 
 .email-compose .close-btn {
     background-color: unset;
@@ -75,12 +85,14 @@
 
 .compose-btn {
     text-align: center;
+    background-color: white;
+    -webkit-box-shadow: 1px 0px 19px -5px rgba(0, 0, 0, 0.7);
+    box-shadow: 1px 0px 19px -5px rgba(0, 0, 0, 0.7);
     width: 9rem;
     height: 3rem;
+    align-items: center;
+    margin-left: 2rem;
     border-radius: 2rem;
+    cursor: pointer;
 }
 
-.compose-btn span {
-    text-align: center;
-    font-weight: 500;
-}

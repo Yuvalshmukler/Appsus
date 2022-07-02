@@ -20,9 +20,8 @@ export default {
             <aside class="side-menu">
                 <button @click="composeEmail" class="compose-btn">
                 <img src="./img/google-plus.png" class="google-plus">   
-                compos 
                 </button>
-                <email-side :emails="emails">
+                <email-side :emails="emails" @filtered="setSideFilter" >
                 </email-side>
             </aside>
             <email-list
@@ -53,9 +52,6 @@ export default {
         eventBus.on('removed', this.removeEmail)
         eventBus.on('isRead', this.updateIsRead)
         eventBus.on('filterByInbox', this.filterByInbox)
-        eventBus.on('filterBySent', this.filterBySent)
-        eventBus.on('filterAll', this.filterAll)
-        eventBus.on('filterByInput', this.filterByInput)
         /* eventBus.on('closeCompo', this.closCompose) */
     },
     data() {
@@ -76,7 +72,8 @@ export default {
                     const idx = this.emails.findIndex((email) => email.id === id)
                     /* console.log(idx); */
                     this.emails.splice(idx, 1)
-                    /*  showSuccessMsg('Deleted successfully') */
+                    eventBus.emit('show-msg', { txt: 'new note was added', type: 'success' , link: '',})
+
                 })
                 .catch(err => {
                     console.log(err)
@@ -115,13 +112,10 @@ export default {
         updateIsRead(emailId) {
             emailService.updateReading(emailId)
         },
-
-        filterByBoxes(box) {
-            console.log('im in the app');
-            this.filterByBox = box
+        setSideFilter(status) {
+            this.filterByBox = status
         }
     },
-
 
     computed: {
         emailsToShow() {
@@ -133,8 +127,7 @@ export default {
                     return regex.test(email.body) || regex.test(email.subject) || regex.test(email.sender)
                 });
             }
-
-            if (this.filterByStatus || this.filterByBox) {
+            if (this.filterByStatus) {
                 if (this.filterByStatus === 'read') {
                     emails = emails.filter(email => email.isRead)
                 } else if (this.filterByStatus === 'All') {
@@ -143,9 +136,17 @@ export default {
                     emails = emails.filter(email => !email.isRead)
                 }
             }
+            if (this.filterByBox) {
+                if (this.filterByBox === 'all') return this.emails;
+                if (this.filterByBox === 'isRead') {
+                    return emails = emails.filter(email => !email.isRead)
+                } 
+                return this.emails.filter((email) => {
+                    return email.boxes[this.filterByBox];
+                });
 
+            }
             return emails
-
         },
     },
     unmounted() {

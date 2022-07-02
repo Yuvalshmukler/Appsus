@@ -33,12 +33,3 @@ export function updateIsRead(emailId){
 export function closeCompose(){
     emit('closeCompo')
 }
-export function filterInbox(){
-    emit('filterByInbox')
-}
-export function filterSentEmail(){
-    emit('filterBySent')
-}
-export function filterStatus(){
-    emit('filterByInput')
-}

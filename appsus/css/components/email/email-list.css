@@ -10,6 +10,21 @@
     height: 38rem;
     overflow-y: scroll;
 }
-.scrollable-element{
+
+.scrollable-element {
     background-color: black;
+}
+
+.email-inbox-nav {
+    text-align: left;
+    font-size: 0.9rem;
+    padding: 9px 2px;
+    display: grid;
+    background-color: rgba(201, 201, 201, 0.701);
+    grid-template-columns: 1.2fr 2fr 5fr 0.6fr;
+    grid-template-rows: auto;
+}
+
+.email-inbox {
+    margin-bottom: 5rem;
 }

@@ -64,9 +64,6 @@ export default {
     },
     methods: {
         sendEmail() {
-            /* console.log('email',this.email); */
-
-            /* this.$emit('emailCreated') */
             this.$emit('added', this.email)
             this.$emit('close')
         },

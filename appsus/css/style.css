@@ -49,4 +49,5 @@
 @import 'components/email/email-compose.css';
 
 /* MEDIA QUERIES */
-@import 'mq/mq.css'
+@import 'mq/mq.css';
+@import 'mq/email-mq.css'

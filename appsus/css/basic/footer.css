@@ -1,11 +1,11 @@
 .app-footer {
     color:rgb(51, 51, 51);
     text-align: center;
+    position:relative;
+    bottom:0 ;
     font-size: 20px;
     font-weight: bold;
     background-color: gainsboro;
-    /* position: fixed;
-    bottom:0; */
     width: 100%;
     box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.21);
     margin: 0;

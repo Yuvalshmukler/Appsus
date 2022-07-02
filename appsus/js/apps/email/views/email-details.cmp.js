@@ -14,6 +14,7 @@ export default {
             <h2>You have a massage from : {{email.sender}}</h2>
             <h5>{{email.emailAdress}}</h5>
             <span class="trashIcon" @click="onDeleteEmail"><i class="fa-solid fa-trash"></i></span>
+            <span class="replayIcon" @click="onReplay"><i class="fa-solid fa-reply"></i></span>
             <span >{{date}}</span>
             <p>{{email.body}}</p>
             <button @click="backToInbox">Go back</button>
@@ -51,7 +52,7 @@ export default {
         },
         backToInbox(){
             this.$router.push('/email')
-        }
+        },
     },
     computed: {
         date() {

@@ -1,0 +1,23 @@
+@media (max-width:1000px) {
+body{
+    background-color: rgb(30, 17, 1);
+}
+.compose-btn{
+    width: 6rem;
+}
+.side-bar-email{
+    margin-left: 0rem;
+}
+}
+
+@media (max-width:730px) {
+body{
+    background-color: bisque;
+}
+}
+
+@media (max-width:520px) {
+    body{
+        background-color: rgb(96, 17, 96);
+    }
+}
