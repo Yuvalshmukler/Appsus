@@ -2,25 +2,29 @@ import { bookService } from "../services/book.service.js";
 
 export default {
     template: `
-        <section class="book-add main-app">
-            <h1>Add A Book</h1>
-            <form @submit.prevent="search">
-                <label>
-                    Search book
-                    <input ref="searchInput" type="text" v-model="searchValue" placeholder="Start typing...">
-                    <p>{{searchValue}}<p>
-                    <button>Submit</button>
-                </label>
-            </form>
+        <section class="book-add">
+
             
-            <h2>Search results:</h2>
+            
+            <div class="add-book-search">
+                <form @submit.prevent="search">
+                    <i class="fa-solid fa-plus"></i>
+                    <i class="fa-solid fa-book"></i>
+                    <input class="book-search-input" ref="searchInput" type="text" v-model="searchValue" placeholder="Search book...">
+                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+        <div>    
+        
+        <div class="search-results">
+            <h2 >Search results:</h2>
             <ul>
-                <li v-for="(book, idx) in allBooks" >
-                    {{book.title}}| {{book.publishedDate}} 
-                    <button @click=addSearch(idx)>+<button>
+                <li class="search-item" v-for="(book, idx) in allBooks" >
+                    <button @click=addSearch(idx)><i class="fa-solid fa-plus"></i><button>
+                    {{book.title}} | {{book.publishedDate}} 
                   <br>
                   </li>
             </ul>
+        <div>
         </section>
     `,
     data() {

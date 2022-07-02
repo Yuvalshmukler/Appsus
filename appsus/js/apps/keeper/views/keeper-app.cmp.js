@@ -1,5 +1,6 @@
 
 import { keeperService }  from "../services/keeper-service.js"
+import { emailService }  from "../../email/services/email.service.js"
 import { eventBus } from '../../../services/eventBus-service.js';
 
 import noteAdd from "../cmps/note-add.cmp.js";
@@ -41,6 +42,7 @@ export default {
                 @editProp="editProp"
                 @duplicateNote = "duplicateNote"
                 @unpin="unpin"
+                @sendEmail = "sendEmail"
                 />
                 <hr>
               
@@ -50,6 +52,7 @@ export default {
                 @editProp="editProp"
                 @duplicateNote = "duplicateNote"
                 @unpin="unpin"
+                @sendEmail = "sendEmail"
                 />
 
                 
@@ -128,6 +131,11 @@ export default {
             .then(note => 
                 {var idx = this.notes.findIndex(n => n.id === note.id)
                    this.notes[idx] = note } )   
+        },
+        sendEmail(note){
+            console.log('sending as email', note)
+            emailService.addFromNote(note)
+            
         },
     },
     computed: {

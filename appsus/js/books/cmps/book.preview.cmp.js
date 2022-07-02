@@ -16,7 +16,7 @@ export default {
         var currencyCode = this.book.listPrice.currencyCode
         if (currencyCode === 'USD') return this.book.listPrice.amount 
         if (currencyCode === 'ILS') return Math.round(this.book.listPrice.amount/3.5 )
-        if (currencyCode === 'EUR') return Math.round (this.book.listPrice.amount/1.2 )
+        if (currencyCode === 'EUR') return Math.round (this.book.listPrice.amount*1.2 )
         
       }
     },

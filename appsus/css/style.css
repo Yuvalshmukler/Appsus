@@ -5,6 +5,7 @@
 
 /* COMPONENTS */
 @import 'components/screen.css';
+@import 'components/home-page.css';
 
 /* BASE */
 @import 'basic/base.css';
@@ -23,6 +24,8 @@
 /* BOOK */
 
 @import 'components/book/main-book.css';
+@import 'components/book/book-add.css';
+@import 'components/book/book-details.css';
 @import 'components/book/book-filter.css';
 @import 'components/book/book-list.css';
 @import 'components/book/book-preview.css';
@@ -46,4 +49,4 @@
 @import 'components/email/email-compose.css';
 
 /* MEDIA QUERIES */
-/* @import 'mq/mq.css'*/
+@import 'mq/mq.css'

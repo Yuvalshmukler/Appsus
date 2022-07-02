@@ -25,6 +25,7 @@ export default {
                               
                         <p><input class="bg-color-input" type="color" @change="editProp('bgColor', note)" 
                                 v-model="note.style.backgroundColor" ></p>
+                        <p @click="sendEmail(note)"><i class="fa-solid fa-paper-plane"></i></p>
     
                 </div>  
             </li>
@@ -68,6 +69,10 @@ export default {
             console.log('unpin', note)
             this.$emit('unpin', note)  
         },
+        sendEmail(note){
+            console.log('sending email', note)
+            this.$emit('sendEmail', note)  
+        }
      
     },
     computed: {

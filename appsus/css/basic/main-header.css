@@ -23,6 +23,8 @@
 
 .app-header img {
     width: 4em;
+    height: 4em;
+    border-radius: 50%;
 }
 
 .logo h1 {

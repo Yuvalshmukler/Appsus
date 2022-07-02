@@ -6,10 +6,10 @@ import reviewAdd from "../cmps/review-add.cmp.js";
 export default {
     props: [],
     template: `
-      <section v-if="book" class="book-details main-app">
+      <section v-if="book" class="book-details">
           <img class="book-details-img" :src="book.thumbnail"/>
 
-        <div class="info">
+        <div class="book-info">
             <h2>{{book.title}}</h2>
             <h3>{{book.subtitle}}</h3>
             <li v-for="author in book.authors" >
@@ -21,16 +21,16 @@ export default {
                     {{category}}, 
                 </li>
                 <p>Language: {{book.language}}</p>
-                <h4  :class="amount">{{book.listPrice.amount}} {{book.listPrice.currencyCode}} <img class="sale-img" :src="sale"/></h4>
+                <h4  :class="amount"> $ {{price}} <img class="sale-img" :src="sale"/></h4>
                 
                 <p v-if="!readMore">{{description}}...</p>
                 <long-text v-else :txt="book.description"/> 
-                <button @click="readMore=!readMore">{{readDisplay}}</button>
-                
-                <review-add :book="book"/>
+                <p class="read-more" @click="readMore=!readMore">{{readDisplay}}</p>
+<!--                 
+                <review-add :book="book"/> -->
 
-                <router-link :to="'/book/' + nextBookId">Next Book</router-link>
-                <router-link class="close" to="/book"> X</router-link>
+                <router-link class="next-book" :to="'/book/' + nextBookId">Next book <i class="fa-solid fa-angles-right"></i></router-link>
+                <router-link class="close-book" to="/book"> <i class="fa-solid fa-xmark"></i> </router-link>
         </div>
             
             
@@ -68,6 +68,13 @@ export default {
             if (year - this.book.publishedDate > 10 ) return 'Veteran Book'
             else if (year - this.book.publishedDate < 1 ) return 'New!'
             else return ''
+        },
+        price(){
+            // return this.book.listPrice.amount 
+            var currencyCode = this.book.listPrice.currencyCode
+            if (currencyCode === 'USD') return this.book.listPrice.amount 
+            if (currencyCode === 'ILS') return Math.round(this.book.listPrice.amount/3.5 )
+            if (currencyCode === 'EUR') return Math.round (this.book.listPrice.amount*1.2 )
         },
         amount(){
             if (this.book.listPrice.amount > 150) return 'high'

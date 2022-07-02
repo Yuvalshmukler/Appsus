@@ -1,7 +1,7 @@
 export default {
     template:`
     <footer class="app-footer">
-       <p>&copy; bookShop 2022</p>
+       <p>&copy; Apssus | Yuval Shmukler | Tal Hammer Topaz | 2022</p>
     </footer>
    `,
      data() {

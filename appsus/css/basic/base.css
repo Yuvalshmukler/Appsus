@@ -14,3 +14,9 @@ body {
 button {
     border: none;
 }
+button{
+    padding: 10px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: darkslategray;
+    border-radius: 5px;
+}
