@@ -5,13 +5,13 @@
 
 /* COMPONENTS */
 @import 'components/screen.css';
-/* @import 'components/drop-down.css'; */
 
 /* BASE */
 @import 'basic/base.css';
-@import 'basic/header.css';
 @import 'basic/footer.css';
 @import 'basic/layout.css';
+@import 'basic/main-header.css';
+
 /* @import 'basic/helpers.css'; */
 
 
@@ -20,7 +20,6 @@
 /* BASIC COMPONENTS */
 @import 'components/user-msg.css';
 @import 'components/book/main-book.css';
-@import 'components/main-header.css';
 
 /* KEEPER */
 @import 'components/keeper/main-keeper.css';
@@ -37,19 +36,8 @@
 @import 'components/email/email-list.css';
 @import 'components/email/email-app.css';
 @import 'components/email/side-nav.css';
+@import 'components/email/email-filter.css';
 @import 'components/email/email-compose.css';
 
 /* MEDIA QUERIES */
 /* @import 'mq/mq.css'*/
-
-/* .close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    text-decoration: none;
-    border: 2px solid pink;
-    border-radius: 5px;
-    padding: 5px;
-}
- */
-

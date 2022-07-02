@@ -4,8 +4,10 @@ export default {
     template: `
     <section class="email-filter" >
         <input type="text"
+        class="search-input"
         v-model="filterBy.body"
         @input="filter"
+        
          placeholder="search Email">
          <select name="filterByRead" @change="getFilter($event)" id="">
              <option  value="All">All</option>

@@ -4,3 +4,9 @@
     padding: 0;
     margin: 0;
 }
+
+.email-inbox {
+    width: 100%;
+    height: 38rem;
+    overflow-y: scroll;
+}

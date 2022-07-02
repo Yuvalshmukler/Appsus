@@ -47,7 +47,7 @@ function _createEmail(sender = utilService.createWord(6)) {
         subject: utilService.makeLorem(utilService.getRandom(2, 3)),
         body: utilService.makeLorem(utilService.getRandom(100, 210)),
         sentAt: new Date(),
-        isRead: false,
+        isRead: (Math.random() < 0.5),
         emailAdress: `${sender}${utilService.getRandom(4, 7)}@gmail.com`,
         boxes: {
             inbox: true,

@@ -1,22 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat:wght@300&family=Roboto:wght@300;400&family=Satisfy&family=Tiro+Bangla&display=swap');
-
-
 .app-header {
-    color: darkgoldenrod;
     background-color: white;
     border-radius: none;
     text-align: center;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    padding: 15px 15px;
     width: 100%;
-    /* margin: 20px auto; */
-    padding: 20px 80px;
     box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.082);
 
 }
 
 .logo{
+    width:15rem;
     margin: 0;
     display: flex;
     align-items: flex-end;

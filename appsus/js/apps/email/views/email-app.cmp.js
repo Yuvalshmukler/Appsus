@@ -13,8 +13,8 @@ export default {
     <section v-if="emails">
         <!-- <email-header></email-header> -->
         <email-filter @filtered="filterEmail" @readUnread="filterByReadUnread"/>
-        <button @click="sortByDate">Date</button>
-        <button>text</button>
+        <button @click.prevent="sortByDate">Date</button>
+        <button @click.prevent="sortByTitle">text</button>
         <section class="email-app-container" v-if="emails" >
             <aside class="side-menu">
                 <button @click="composeEmail" class="compose-btn">
@@ -59,10 +59,6 @@ export default {
             isCompose: false,
             filterBy: null,
             filterByStatus: null,
-            sortBy: {
-                date: false,
-                emails: false
-            }
         }
     },
     methods: {
@@ -94,16 +90,21 @@ export default {
         },
         filterByReadUnread(filterBy) {
             this.filterByStatus = filterBy
-            console.log('filterByBoxes', this.filterByStatus);
-
         },
         getUpdateEmails(email) {
             emailService.createNewEmail(email)
                 .then((email) => this.emails.unshift(email))
         },
         sortByDate() {
-            console.log('lol');
-            this.sortBy.date = true
+            this.emails.sort((fEmail, sEmail) => {
+                if (fEmail.sentAt > sEmail.sentAt) 1
+                else if (fEmail.sentAt < sEmail.sentAt) return -1
+                else return 0
+            })
+        },
+        sortByTitle() {
+            this.emails.sort((a, b) => a.subject.localeCompare(b.subject))
+
         },
         updateIsRead(emailId) {
             emailService.updateReading(emailId)
@@ -117,18 +118,25 @@ export default {
     },
     computed: {
         emailsToShow() {
-            if (!this.filterBy) return this.emails
-            console.log(this.emails);
+            if (!this.emails) return
             var emails = this.emails
             if (this.filterBy) {
                 const regex = new RegExp(this.filterBy, "i");
-                emails = emails.filter((email) => regex.test(email.body));
+                emails = emails.filter((email) => {
+                    return regex.test(email.body) || regex.test(email.subject) || regex.test(email.sender)
+                });
             }
-/*             if (this.filterByStatus) {
-                console.log('hello read');
-                emails = emails.filter(email => email.isRead)
+            if (this.filterByStatus) {
+                if (this.filterByStatus === 'read') {
+                    emails = emails.filter(email => email.isRead)
+                } else if (this.filterByStatus === 'All') {
+                    return emails
+                } else {
+                    emails = emails.filter(email => !email.isRead)
+                }
             }
- */            return emails
+
+            return emails
 
         },
     },
