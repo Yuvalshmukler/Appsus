@@ -7,6 +7,8 @@ export default {
     template: `
         <section class="note-nav">
           <!-- <pre>{{filterBy}}</pre> -->
+
+          <img src="img/keeper.png"/><h4>Kepper</h4>
           
             <h4 class="active-nav"><i class="fa-solid fa-lightbulb"></i> Notes</h4>
             <h4><i class="fa-solid fa-tag"></i> Labels</h4>
