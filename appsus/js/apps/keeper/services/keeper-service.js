@@ -31,13 +31,13 @@ function getLabels(){
   notes.forEach(note => {
     if (!labels.includes(note.info.label)) labels.push(note.info.label)
     })
-  console.log(labels)
+  // console.log(labels)
   return labels
 }
 
 
 function edit(editPram, note){
-  /* console.log('edit service', editPram, note) */
+  console.log('edit service', editPram, note)
   note[editPram] = true
   save(note)
 
@@ -45,8 +45,8 @@ function edit(editPram, note){
 
 function duplicate(note){
   /* console.log('duplicate service', note) */
-  note.id = utilService.makeId()
-  storageService.post(NOTES_KEY, note)
+  // note.id = utilService.makeId()
+  return storageService.post(NOTES_KEY, note)
 
 }
 

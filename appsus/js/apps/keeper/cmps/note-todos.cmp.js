@@ -5,8 +5,8 @@ export default {
             <h5 class="label">{{info.label}}</h5>
             <h3>{{info.title}}</h3>
             <ul>
-                <li v-for="todo in info.todos" >
-                ◻️ {{todo.txt}}
+                <li  v-for="todo in info.todos" >
+                ◻️ {{todo.txt}} 
                 </li>
             </ul>
             
@@ -17,7 +17,9 @@ export default {
         
       }
     },
-    methods: {},
+    methods: {
+     
+    },
     computed: {},
   }
   
