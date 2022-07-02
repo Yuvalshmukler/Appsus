@@ -98,7 +98,6 @@ export default {
 
         },
         getUpdateEmails(email) {
-            /* later */
             emailService.createNewEmail(email)
                 .then((email) => this.emails.unshift(email))
         },
@@ -125,11 +124,11 @@ export default {
                 const regex = new RegExp(this.filterBy, "i");
                 emails = emails.filter((email) => regex.test(email.body));
             }
-            if (this.filterByStatus) {
+/*             if (this.filterByStatus) {
                 console.log('hello read');
                 emails = emails.filter(email => email.isRead)
             }
-            return emails
+ */            return emails
 
         },
     },

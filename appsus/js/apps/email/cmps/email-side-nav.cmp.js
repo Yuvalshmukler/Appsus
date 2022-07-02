@@ -48,4 +48,3 @@ export default {
     },
 }
 
-/* emails.then(("inbox " + this.emails.filter((email) => email.boxes.inbox === true).length)) */
