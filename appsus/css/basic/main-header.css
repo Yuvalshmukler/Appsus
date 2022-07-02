@@ -5,25 +5,30 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    padding: 15px 15px;
+    /* padding: 15px 15px; */
     width: 100%;
     box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.082);
 
 }
 
 .logo{
-    width:15rem;
-    margin: 0;
+    width:5rem;
+    font-style: italic;
+    margin: 5px;
+    margin-left: 50px;
     display: flex;
     align-items: flex-end;
     font-family: 'Tiro Bangla', serif;
     font-weight: italic;
 }
 .app-header img{
-    width: 5em;
+    width: 4em;
 }
 .logo h1{
-    margin: 0;
+    margin-bottom: 0; 
+    margin-left: 2px;
+    font-size: 2em;
+    color:cadetblue;
 }
 .app-header h2{
     font-size: 2em;
