@@ -85,9 +85,8 @@
 
 .compose-btn {
     text-align: center;
-    background-color: white;
-    -webkit-box-shadow: 1px 0px 19px -5px rgba(0, 0, 0, 0.7);
-    box-shadow: 1px 0px 19px -5px rgba(0, 0, 0, 0.7);
+    background-color: rgb(255, 255, 255);
+    box-shadow: 1px 0px 10px -5px rgba(0, 0, 0, 0.5);
     width: 9rem;
     height: 3rem;
     align-items: center;
@@ -96,3 +95,6 @@
     cursor: pointer;
 }
 
+.compose-btn:hover{
+    transform: scale(1.1);
+}

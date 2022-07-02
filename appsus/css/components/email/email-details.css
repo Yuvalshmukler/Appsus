@@ -1,6 +1,9 @@
 .trashIcon{
     margin-right: 2rem;
 }
+.undoIcon{
+    margin-right: 2rem;
+}
 .sender {
     color: black;
     font-weight: 600;

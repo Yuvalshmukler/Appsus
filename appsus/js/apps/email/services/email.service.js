@@ -9,6 +9,7 @@ export const emailService = {
     createNewEmail,
     updateReading,
     addFromNote,
+    save,
 }
 const EMAIL_KEY = 'emails'
 const emailsDB = utilService.loadFromStorage(EMAIL_KEY) || _createEmails()
@@ -16,7 +17,7 @@ const emailsDB = utilService.loadFromStorage(EMAIL_KEY) || _createEmails()
 
 /////// from Note//////
 
-function addFromNote(note){
+function addFromNote(note) {
     console.log('email service adding note', note)
     return
 }
@@ -45,10 +46,10 @@ function createNewEmail(emailDetails) {
     /* console.log('email',email); */
     return save(email)
 }
-
 function save(email) {
     console.log('saving', email)
-    return storageService.post(EMAIL_KEY, email)
+    if (email.id) return storageService.put(EMAIL_KEY, email)
+    else return storageService.post(EMAIL_KEY, email)
 }
 
 function _createEmail(sender = utilService.createWord(6)) {
@@ -98,7 +99,7 @@ function updateReading(emailId) {
 }
 
 ////// for all changes
-function updateEmail(emailId,prop,value) {
+function updateEmail(emailId, prop, value) {
     const idx = emailsDB.findIndex((email) => email.id === emailId)
     emailsDB[idx].prop = value
     utilService.saveToStorage(EMAIL_KEY, emailsDB)

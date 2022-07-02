@@ -1,5 +1,5 @@
 import longText from '../../../cmps/long-text.cmp.js'
-import { utilService } from '../../../services/util.service.js'
+import { updateEmail } from '../../../services/eventBus-service.js'
 
 export default {
     name: '',
@@ -7,7 +7,7 @@ export default {
     template: `
     <section v-if="email" class="email-preview-container">
             <span @click.prevent="toggleStar" class="email-preivew-star" 
-                 v-bind:class="{yellow:isStarred}">
+                 v-bind:class="{yellow:email.boxes.star}">
                 <i class="fa-solid fa-star"></i>
             </span>
             <span class="email-preivew-sender">
@@ -28,18 +28,15 @@ export default {
     components: {
         longText
     },
-
-    created() {
-    },
     data() {
         return {
-            isStarred:false,
         }
     },
     methods: {
         toggleStar(){
-            this.email.boxes.isStarred = true
-            this.isStarred = !this.isStarred
+            const email = JSON.parse(JSON.stringify(this.email))
+            email.boxes.star = !email.boxes.star
+            updateEmail(email)
         }
     },
     computed: {

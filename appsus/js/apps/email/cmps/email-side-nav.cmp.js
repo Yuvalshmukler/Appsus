@@ -3,19 +3,22 @@ export default {
     template: `
     <section v-if="emails">
         <ul class="side-bar-email">
-            <pre></pre>
-            <li @click="filterByStatus('all')"><i class="fa-solid fa-envelope"></i>all</li>
-            <li @click="filterByStatus('isRead')"><i class="fa-solid fa-inbox">
+            <li @click="filterByStatus('all')">
+                <i class="fa-solid fa-envelope"></i>all</li>
+            <li @click="filterByStatus('isRead')">
+                <i class="fa-solid fa-inbox">
             </i>{{CountunReaden}}</li>
-            <li @click="filterByStatus('star')"><i class="fa-solid fa-star"></i>{{CountunStars}}</li>
-            <li @click="filterByStatus('sentBox')"><i class="fa-solid fa-paper-plane">
+            <li @click="filterByStatus('star')"><i 
+            class="fa-solid fa-star"></i>{{CountunStars}}</li>
+            <li @click="filterByStatus('sentBox')">
+                <i class="fa-solid fa-paper-plane">
             </i>{{CountunSentEmails}}</li>
-            <li @click="filterByStatus('draft')"><i class="fa-brands fa-firstdraft"></i>{{CountunDraft}}</li>
+            <li @click="filterByStatus('draft')">
+                <i class="fa-brands fa-firstdraft">
+                </i>{{CountunDraft}}</li>
         </ul>
     </section>
     `,
-    created() {
-    },
     data() {
         return {
             filterBy: null
@@ -30,7 +33,6 @@ export default {
             this.$emit('filtered', status)
         },
     },
-
     computed: {
         CountunReaden() {
             return ("inbox " + this.emails.filter((email) => !email.isRead).length)
@@ -44,8 +46,6 @@ export default {
         CountunDraft() {
             return ("Draft " + this.emails.filter((email) => email.boxes.draft).length)
         }
-    },
-    unmounted() {
     },
 }
 

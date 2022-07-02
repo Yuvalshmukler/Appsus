@@ -29,7 +29,9 @@ export function deleteEmail(emailId){
 export function updateIsRead(emailId){
     emit('isRead',emailId)
 }
-
 export function closeCompose(){
     emit('closeCompo')
+}
+export function updateEmail(email){
+    emit('updated',email)
 }

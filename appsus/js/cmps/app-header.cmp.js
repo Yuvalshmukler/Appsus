@@ -12,7 +12,7 @@ export default {
             class="nav-menu">
             </i></button>
             <transition>
-                <div v-if="toggleMenu" class="app-navigation">
+                <div v-if="toggleMenu" class="app-navigation" @click="toggleMenu = false">
                   <router-link to="/" class="nav-link">
                      <img src="img/home.png"/></router-link>
                   <router-link to="/book" class="nav-link">

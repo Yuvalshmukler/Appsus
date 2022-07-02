@@ -10,8 +10,7 @@ export default {
                     <span>New Message</span>
                     <button
                         @click="onCloseCompons"
-                        class="close-btn">
-                        x
+                        class="close-btn">x
                     </button>
                 </div>
                 <input class="form-txt" 
@@ -40,10 +39,7 @@ export default {
                 </div>
             </form>
     </section>
-
     `,
-    created() {
-    },
     data() {
         return {
             email: {
@@ -60,7 +56,6 @@ export default {
             },
             removed: false
         }
-
     },
     methods: {
         sendEmail() {
@@ -71,10 +66,5 @@ export default {
             this.$emit('close')
         },
     },
-    computed: {
-    },
-    unmounted() {
-    },
-
 }
 

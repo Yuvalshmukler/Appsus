@@ -4,19 +4,22 @@ import emailList from '../cmps/email-list.cmp.js'
 import emailSide from '../cmps/email-side-nav.cmp.js'
 import emailCompose from '../cmps/email-compose.cmp.js'
 import emailFilter from '../cmps/email-filter.cmp.js'
-import emailHeader from '../cmps/email-header.cmp.js'
 
 export default {
     name: '',
     props: [''],
     template: `
     <section v-if="emails">
-        <!-- <email-header></email-header> -->
         <email-filter @filtered="filterEmail" 
         @readUnread="filterByReadUnread"/>
-        <button @click.prevent="sortByDate">Date</button>
-        <button @click.prevent="sortByTitle">text</button>
-        <section class="email-app-container" v-if="emails" >
+
+<!--         <input type="radio"
+         @click.prevent="sortByDate"
+         class="sortinput">Date</input>
+        <input type="radio"
+         @click.prevent="sortByTitle">text</input class="sortinput">
+ -->         
+        <section class="email-app-container" >
             <aside class="side-menu">
                 <button @click="composeEmail" class="compose-btn">
                 <img src="./img/google-plus.png" class="google-plus">   
@@ -24,7 +27,7 @@ export default {
                 <email-side :emails="emails" @filtered="setSideFilter" >
                 </email-side>
             </aside>
-            <email-list
+            <email-list  v-if="emails"
                 :emails="emailsToShow">                           
             </email-list>
             <email-compose
@@ -41,18 +44,16 @@ export default {
         emailSide,
         emailCompose,
         emailFilter,
-        emailHeader,
     },
     created() {
         emailService.query()
             .then(emails => {
-                /*  console.log(emails); */
                 this.emails = emails
             })
         eventBus.on('removed', this.removeEmail)
         eventBus.on('isRead', this.updateIsRead)
         eventBus.on('filterByInbox', this.filterByInbox)
-        /* eventBus.on('closeCompo', this.closCompose) */
+        eventBus.on('updated', this.updateEmail)
     },
     data() {
         return {
@@ -64,20 +65,26 @@ export default {
         }
     },
     methods: {
+        updateEmail(email) {
+            emailService.save(email)
+            .then(newEmail => {
+                const idx = this.emails.findIndex(email => email.id === newEmail.id)
+                this.emails.splice(idx, 1, newEmail)
+            } ) 
+        },
         removeEmail(id) {
             emailService.remove(id)
                 .then(() => {
-                    /* console.log('Deleted successfully') */
                     this.$router.push('/email')
                     const idx = this.emails.findIndex((email) => email.id === id)
-                    /* console.log(idx); */
                     this.emails.splice(idx, 1)
-                    eventBus.emit('show-msg', { txt: 'new note was added', type: 'success' , link: '',})
+                    eventBus.emit('show-msg', { txt: 'Deleted successfully', type: 'success', link: '', })
 
                 })
                 .catch(err => {
                     console.log(err)
-                    /* showErrorMsg('Failed to remove') */
+                    eventBus.emit('show-msg', { txt: 'Faild to delete', type: 'success', link: '', })
+
                 })
         },
         composeEmail() {
@@ -96,7 +103,10 @@ export default {
         },
         getUpdateEmails(email) {
             emailService.createNewEmail(email)
-                .then((email) => this.emails.unshift(email))
+                .then((email) => {
+                    this.emails.unshift(email)
+                    eventBus.emit('show-msg', { txt: 'sent successfully', type: 'success', link: '', })
+                })
         },
         sortByDate() {
             this.emails.sort((fEmail, sEmail) => {
@@ -140,7 +150,7 @@ export default {
                 if (this.filterByBox === 'all') return this.emails;
                 if (this.filterByBox === 'isRead') {
                     return emails = emails.filter(email => !email.isRead)
-                } 
+                }
                 return this.emails.filter((email) => {
                     return email.boxes[this.filterByBox];
                 });
