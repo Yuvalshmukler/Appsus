@@ -9,7 +9,7 @@ export default {
         @input="filter"
         
          placeholder="search Email">
-         <select name="filterByRead" @change="getFilter($event)" id="">
+         <select class="filter-Read" @change="getFilter($event)" id="">
              <option  value="All">All</option>
             <option  value="read">read</option>
             <option value="unread">unread</option>
