@@ -9,16 +9,19 @@
 
 
 
-
-
 .notes-preview-container{
     /* background-color: rgb(237, 248, 248); */
     display: grid;
+    grid-template-columns: repeat(auto-fit, 400px);
+    gap: 15px;
+    list-style: none;
+    margin: 0 auto;
+/*     
+    display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
-    /* flex-wrap: wrap; */
     list-style: none;
-    width: 100%;
+    width: 100%; */
 }
 
 .actions{
