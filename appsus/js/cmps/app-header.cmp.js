@@ -2,7 +2,8 @@ export default {
   template: `
     <header class="app-header ">
         <div class="logo">
-           <img src="img/hourse.jpg"/>
+        <router-link to="/" class="nav-link">
+           <img src="img/hourse.jpg"/></router-link>
            <h1>Apssus</h1>
           </div>
         <nav class="nav-bar">

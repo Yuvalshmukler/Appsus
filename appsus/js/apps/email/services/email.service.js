@@ -8,9 +8,20 @@ export const emailService = {
     remove,
     createNewEmail,
     updateReading,
+    addFromNote,
 }
 const EMAIL_KEY = 'emails'
 const emailsDB = utilService.loadFromStorage(EMAIL_KEY) || _createEmails()
+
+
+/////// from Note//////
+
+function addFromNote(note){
+    console.log('email service adding note', note)
+    return
+}
+
+
 
 
 function query() {

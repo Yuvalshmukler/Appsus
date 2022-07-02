@@ -4,7 +4,6 @@ body{
 
 .grid-container{
     display: grid;
-    /* background-color: blanchedalmond; */
     grid-template-columns: 1fr 4fr;
     grid-template-rows: 1fr;
     grid-template-areas: "sidenav notesapp";
@@ -13,5 +12,5 @@ body{
 .notes-app{
     margin: 0;
     grid-area: notesapp;
-    /* background-color:lightseagreen; */
+   
 }

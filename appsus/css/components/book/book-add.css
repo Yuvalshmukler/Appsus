@@ -1,0 +1,37 @@
+.book-add{
+    background-color: whitesmoke;
+    text-align:left;
+    width: 80%;
+    height: 82vh;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 30px auto;
+    font-size: 1em;
+    position: relative;
+}
+
+.add-book-search{
+    width: 100%;
+    
+    /* display: flex; */
+}
+
+.book-add i{
+    font-size: 2em;
+}
+
+.search-results h2{
+    text-decoration: underline;
+    margin: 20px;
+}
+
+.search-results li{
+    display: block;
+    font-size: 2em;
+}
+
+.book-add button{
+    border: none;
+    background-color: whitesmoke;
+
+}

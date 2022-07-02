@@ -1,0 +1,61 @@
+.home-page{
+    height: 85vh;
+    width: 100%;
+    /* display: flex; */
+    justify-items: center;
+    align-items: center;
+    background-color: rgba(95, 158, 160, 0.164);
+    /* background-image: url("img/hourse.jpg); */
+}
+
+.home-page-info{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 700px; 
+    margin: 0 auto;
+    /* justify-items: flex-start; */
+    align-items: center;
+    text-align: right;
+}
+
+.home-page-info h2{
+    text-align: left;
+    font-style: italic;
+    font-size: 2em;
+}
+
+.home-page-info img{
+    border-radius: 50%;
+    filter: blur(1px);
+    /* opacity: 0.8; */
+    width: 200px;
+    height: 200px;
+    border: none;
+    box-shadow: none;
+    margin: 2em;
+}
+
+
+
+.home-page-links{
+    width: fit-content;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+   
+}
+
+.home-page-link img{
+    max-width: 200px;
+    height: fit-content;
+    margin: 2em;
+    box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.21);
+    border-radius: 5px;
+}
+
+.home-page h1{
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color:rgb(51, 51, 51);
+
+}

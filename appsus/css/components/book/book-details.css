@@ -1,0 +1,107 @@
+
+
+.book-details{
+    display: flex;
+    /* flex-wrap: wrap; */
+    background-color: whitesmoke;
+    text-align:left;
+    width: 80%;
+    height: 82vh;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 30px auto;
+    font-size: 1em;
+    position: relative;
+
+}
+
+.book-details-img{
+    /* height: 500px; */
+    width: 30%;
+    height: fit-content;
+    margin: 30px 60px;
+    border-radius: 5px;
+}
+
+.book-info h2, h3{
+    text-transform: capitalize;
+}
+
+
+.book-info{
+    width: 60%;
+}
+
+
+.high{
+    color: red;
+    font-weight: bold;
+}
+
+.low{
+    color: green;
+    font-weight: bold;
+}
+
+
+li{
+    list-style: none;
+    display: inline;
+}
+
+.highlight{
+    font-weight: bold;
+    font-style: oblique;
+    color: darkgoldenrod;
+}
+
+.read-more{
+    text-decoration: underline;
+    cursor: pointer;
+
+}
+
+.sale-img{
+    margin-left: 1em;
+    width: 100px;
+    border-radius: 5px;
+
+
+}
+
+.close-book{
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 1.5em;
+    color:rgb(51, 51, 51);
+}
+
+.next-book{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1em;
+    color:rgb(51, 51, 51);
+}
+
+
+.review-add{
+    border: 2px solid darkslategray;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 10px;
+}
+
+.review-add input{
+    border: 2px solid darkslategray;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 10px;
+}
+
+
+.review-item{
+    display: block;
+    font-size: 16px;
+}
